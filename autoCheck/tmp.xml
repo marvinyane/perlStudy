@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Device name="NgiPtest" model="NGI" version="0.1">
+	<Config>
+		<Format bcspwrapped="1">
+			<PacketType>binary</PacketType>
+			<PacketFormat>btcarsocketkit</PacketFormat>
+		</Format>
+		<Plugins>0</Plugins>
+	</Config>
+	<CmdList bigendian="1">
+		<CMD type="EVT" group="MSG">
+			<Name alias="mgci">BT_MSG_GET_CONTENT_IND</Name>
+			<OPCode>0x8530</OPCode>
+			<Param>
+				<Name>did</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>format</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>addrlen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>address</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>datalen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>data</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MSG">
+			<Name alias="mgcci">BT_MSG_GET_CONTENT_COMPLETED_IND</Name>
+			<OPCode>0x8531</OPCode>
+			<Param>
+				<Name>did</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MSG">
+			<Name alias="mrsr">BT_MSG_READ_SMS_REQ</Name>
+			<OPCode>0x523</OPCode>
+			<Param>
+				<Name>did</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>index</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MSG">
+			<Name alias="mrsc">BT_MSG_READ_SMS_CFM</Name>
+			<OPCode>0x8523</OPCode>
+			<Param>
+				<Name>did</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MSG">
+			<Name alias="mdsr">BT_MSG_DELETE_SMS_REQ</Name>
+			<OPCode>0x527</OPCode>
+			<Param>
+				<Name>did</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>index</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MSG">
+			<Name alias="mdsc">BT_MSG_DELETE_SMS_CFM</Name>
+			<OPCode>0x8527</OPCode>
+			<Param>
+				<Name>did</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MSG">
+			<Name alias="mssnr">BT_MSG_SET_SMS_NOTIFICATION_REQ</Name>
+			<OPCode>0x528</OPCode>
+			<Param>
+				<Name>did</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>state</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MSG">
+			<Name alias="mssnc">BT_MSG_SET_SMS_NOTIFICATION_CFM</Name>
+			<OPCode>0x8528</OPCode>
+			<Param>
+				<Name>did</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MSG">
+			<Name alias="mssr">BT_MSG_SEND_SMS_REQ</Name>
+			<OPCode>0x524</OPCode>
+			<Param>
+				<Name>did</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>addrLen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>address</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>dataLen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>data</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MSG">
+			<Name alias="mssc">BT_MSG_SEND_SMS_CFM</Name>
+			<OPCode>0x8524</OPCode>
+			<Param>
+				<Name>did</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HID">
+			<Name alias="hcr">BT_HID_CONNECT_REQ</Name>
+			<OPCode>0x701</OPCode>
+			<Param>
+				<Name>addr</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HID">
+			<Name alias="hcc">BT_HID_CONNECT_CFM</Name>
+			<OPCode>0x8701</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HID">
+			<Name alias="hdr">BT_HID_DISCONNECT_REQ</Name>
+			<OPCode>0x702</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HID">
+			<Name alias="hdc">BT_HID_DISCONNECT_CFM</Name>
+			<OPCode>0x8702</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HID">
+			<Name alias="hdr1">BT_HID_DATA_REQ</Name>
+			<OPCode>0x703</OPCode>
+			<Param>
+				<Name>key</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>xRef</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>yRef</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>wheelRef</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HID">
+			<Name alias="hdc1">BT_HID_DATA_CFM</Name>
+			<OPCode>0x8703</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HID">
+			<Name alias="hsi3">BT_HID_STATUS_IND</Name>
+			<OPCode>0x8710</OPCode>
+			<Param>
+				<Name>deviceAddr</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>status</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+	</CmdList>
+</Device>

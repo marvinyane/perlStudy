@@ -1,0 +1,4 @@
+#! /bin/sh
+./getIpbyHost.pl 24
+sleep 2
+cp config ~/.ssh/

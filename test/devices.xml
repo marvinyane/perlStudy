@@ -1,0 +1,6780 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Device name="Ptest" model="ST-501A" version="1.8">
+	<Config>
+		<Format bcspwrapped="1">
+			<PacketType>binary</PacketType>
+			<PacketFormat>btcarkit</PacketFormat>
+		</Format>
+		<Plugins>Cradle.dll</Plugins>
+	</Config>
+	<CmdList bigendian="1">
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfrr">BT_GEN_FID_RESET_REQ</Name>
+			<OPCode>0x1</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfrc">BT_GEN_FID_RESET_CFM</Name>
+			<OPCode>0x8001</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfii">BT_GEN_FID_INIT_IND</Name>
+			<OPCode>0xC002</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>code</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>ver</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>bd_addr</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>supports</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfir">BT_GEN_FID_INIT_RES</Name>
+			<OPCode>0x4002</OPCode>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfpor">BT_GEN_FID_POWER_OFF_REQ</Name>
+			<OPCode>0x2</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfpoc">BT_GEN_FID_POWER_OFF_CFM</Name>
+			<OPCode>0x8002</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfer">BT_GEN_FID_ECHO_REQ</Name>
+			<OPCode>0x3</OPCode>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>echo</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfec">BT_GEN_FID_ECHO_CFM</Name>
+			<OPCode>0x8003</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>echo</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfrfsr">BT_GEN_FID_RESET_FACTORY_SETTING_REQ</Name>
+			<OPCode>0x4</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfrfsc">BT_GEN_FID_RESET_FACTORY_SETTING_CFM</Name>
+			<OPCode>0x8004</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfir1">BT_GEN_FID_INQUIRY_REQ</Name>
+			<OPCode>0x5</OPCode>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>filter</Name>
+				<Type>u24</Type>
+			</Param>
+			<Param>
+				<Name>duration</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>num</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfic">BT_GEN_FID_INQUIRY_CFM</Name>
+			<OPCode>0x8005</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfiri">BT_GEN_FID_INQ_RESULT_IND</Name>
+			<OPCode>0xC005</OPCode>
+			<Param>
+				<Name>bd_addr</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>cod</Name>
+				<Type>u24</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfirr">BT_GEN_FID_INQ_RESULT_RES</Name>
+			<OPCode>0x4005</OPCode>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gficr">BT_GEN_FID_INQ_CANCEL_REQ</Name>
+			<OPCode>0x6</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gficc">BT_GEN_FID_INQ_CANCEL_CFM</Name>
+			<OPCode>0x8006</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfici">BT_GEN_FID_INQ_COMPLETE_IND</Name>
+			<OPCode>0xC007</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gficr1">BT_GEN_FID_INQ_COMPLETE_RES</Name>
+			<OPCode>0x4007</OPCode>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfssr">BT_GEN_FID_SET_SCANMODE_REQ</Name>
+			<OPCode>0x10</OPCode>
+			<Param>
+				<Name>discover_mode</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfssc">BT_GEN_FID_SET_SCANMODE_CFM</Name>
+			<OPCode>0x8010</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfgrnr">BT_GEN_FID_GET_REMOTE_NAME_REQ</Name>
+			<OPCode>0x11</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfgrnc">BT_GEN_FID_GET_REMOTE_NAME_CFM</Name>
+			<OPCode>0x8011</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfslnr">BT_GEN_FID_SET_LOCAL_NAME_REQ</Name>
+			<OPCode>0x12</OPCode>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfslnc">BT_GEN_FID_SET_LOCAL_NAME_CFM</Name>
+			<OPCode>0x8012</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfscr">BT_GEN_FID_SET_COD_REQ</Name>
+			<OPCode>0x13</OPCode>
+			<Param>
+				<Name>cod</Name>
+				<Type>u24</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfscc">BT_GEN_FID_SET_COD_CFM</Name>
+			<OPCode>0x8013</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfspr">BT_GEN_FID_SET_PAGETIMEOUT_REQ</Name>
+			<OPCode>0x14</OPCode>
+			<Param>
+				<Name>page_timeout</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfspc">BT_GEN_FID_SET_PAGETIMEOUT_CFM</Name>
+			<OPCode>0x8014</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfrlnr">BT_GEN_FID_READ_LOCAL_NAME_REQ</Name>
+			<OPCode>0x15</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfrlnc">BT_GEN_FID_READ_LOCAL_NAME_CFM</Name>
+			<OPCode>0x8015</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfssmr">BT_GEN_FID_SET_SEC_MODE_REQ</Name>
+			<OPCode>0x20</OPCode>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>sec</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfssmc">BT_GEN_FID_SET_SEC_MODE_CFM</Name>
+			<OPCode>0x8020</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsicr">BT_GEN_FID_SET_IO_CAP_REQ</Name>
+			<OPCode>0x21</OPCode>
+			<Param>
+				<Name>io_capability</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mitm</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>bonding</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsicc">BT_GEN_FID_SET_IO_CAP_CFM</Name>
+			<OPCode>0x8021</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfpci">BT_GEN_FID_PIN_CODE_IND</Name>
+			<OPCode>0xC023</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfpcr">BT_GEN_FID_PIN_CODE_RES</Name>
+			<OPCode>0x4023</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>pin_code</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfpni">BT_GEN_FID_PASSKEY_NOTI_IND</Name>
+			<OPCode>0xC021</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>passkey</Name>
+				<Type>u24</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfpnr">BT_GEN_FID_PASSKEY_NOTI_RES</Name>
+			<OPCode>0x4021</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfnci">BT_GEN_FID_NUM_CONFIRM_IND</Name>
+			<OPCode>0xC024</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>numeric</Name>
+				<Type>u24</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfncr">BT_GEN_FID_NUM_CONFIRM_RES</Name>
+			<OPCode>0x4024</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>accept</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfndi">BT_GEN_FID_NUM_DISPLAY_IND</Name>
+			<OPCode>0xC02B</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>numeric</Name>
+				<Type>u24</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfndr">BT_GEN_FID_NUM_DISPLAY_RES</Name>
+			<OPCode>0x402B</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfpi">BT_GEN_FID_PASSKEY_IND</Name>
+			<OPCode>0xC025</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfpr">BT_GEN_FID_PASSKEY_RES</Name>
+			<OPCode>0x4025</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>numeric</Name>
+				<Type>u24</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfpci1">BT_GEN_FID_PAIR_COMPLETE_IND</Name>
+			<OPCode>0xC027</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>pairId</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfpcr1">BT_GEN_FID_PAIR_COMPLETE_RES</Name>
+			<OPCode>0x4027</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfpdai">BT_GEN_FID_PAIR_DEV_ATTRIBUTES_IND</Name>
+			<OPCode>0xC028</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>pairId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>attributes</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfpdar">BT_GEN_FID_PAIR_DEV_ATTRIBUTES_RES</Name>
+			<OPCode>0x4028</OPCode>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsdmr">BT_GEN_FID_SSP_DEBUG_MODE_REQ</Name>
+			<OPCode>0x28</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsdmc">BT_GEN_FID_SSP_DEBUG_MODE_CFM</Name>
+			<OPCode>0x8028</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfpdr">BT_GEN_FID_PAIRING_DEVICE_REQ</Name>
+			<OPCode>0x29</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfpdc">BT_GEN_FID_PAIRING_DEVICE_CFM</Name>
+			<OPCode>0x8029</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfcpr">BT_GEN_FID_CANCEL_PAIRING_REQ</Name>
+			<OPCode>0x2A</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfcpc">BT_GEN_FID_CANCEL_PAIRING_CFM</Name>
+			<OPCode>0x802A</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfglrr">BT_GEN_FID_GET_LOCAL_ROLE_REQ</Name>
+			<OPCode>0x30</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfglrc">BT_GEN_FID_GET_LOCAL_ROLE_CFM</Name>
+			<OPCode>0x8030</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>role</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsrr">BT_GEN_FID_SWITCH_ROLE_REQ</Name>
+			<OPCode>0x31</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>role</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsrc">BT_GEN_FID_SWITCH_ROLE_CFM</Name>
+			<OPCode>0x8031</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>role</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsri">BT_GEN_FID_SWITCH_ROLE_IND</Name>
+			<OPCode>0xC031</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>role</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsrr1">BT_GEN_FID_SWITCH_ROLE_RES</Name>
+			<OPCode>0x4031</OPCode>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfesmr">BT_GEN_FID_EXIT_SNIFF_MODE_REQ</Name>
+			<OPCode>0x35</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfesmc">BT_GEN_FID_EXIT_SNIFF_MODE_CFM</Name>
+			<OPCode>0x8035</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>power_mode</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfpmci">BT_GEN_FID_POWER_MODE_CHANGE_IND</Name>
+			<OPCode>0xC035</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>power_mode</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfpmcr">BT_GEN_FID_POWER_MODE_CHANGE_RES</Name>
+			<OPCode>0x4035</OPCode>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsvsr">BT_GEN_FID_SERVICE_VISIABLE_SET_REQ</Name>
+			<OPCode>0x3A</OPCode>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>services</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsvsc">BT_GEN_FID_SERVICE_VISIABLE_SET_CFM</Name>
+			<OPCode>0x803A</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>services</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsvgr">BT_GEN_FID_SERVICE_VISIABLE_GET_REQ</Name>
+			<OPCode>0x3B</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsvgc">BT_GEN_FID_SERVICE_VISIABLE_GET_CFM</Name>
+			<OPCode>0x803B</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>services</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfscsr">BT_GEN_FID_SERVICE_CONNECTABLE_SET_REQ</Name>
+			<OPCode>0x3C</OPCode>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>services</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfscsc">BT_GEN_FID_SERVICE_CONNECTABLE_SET_CFM</Name>
+			<OPCode>0x803C</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>services</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfscgr">BT_GEN_FID_SERVICE_CONNECTABLE_GET_REQ</Name>
+			<OPCode>0x3D</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfscgc">BT_GEN_FID_SERVICE_CONNECTABLE_GET_CFM</Name>
+			<OPCode>0x803D</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>services</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfaor">BT_GEN_FID_ACL_OPEN_REQ</Name>
+			<OPCode>0x43</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfaoc">BT_GEN_FID_ACL_OPEN_CFM</Name>
+			<OPCode>0x8043</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfaoi">BT_GEN_FID_ACL_OPENED_IND</Name>
+			<OPCode>0xC043</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfaor1">BT_GEN_FID_ACL_OPENED_RES</Name>
+			<OPCode>0x4043</OPCode>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfacr">BT_GEN_FID_ACL_CLOSE_REQ</Name>
+			<OPCode>0x44</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>detach_all</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfacc">BT_GEN_FID_ACL_CLOSE_CFM</Name>
+			<OPCode>0x8044</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfgpdir">BT_GEN_FID_GET_PAIR_DEV_INFO_REQ</Name>
+			<OPCode>0x90</OPCode>
+			<Param>
+				<Name>pairId</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfgpdic">BT_GEN_FID_GET_PAIR_DEV_INFO_CFM</Name>
+			<OPCode>0x8090</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>bdaddr</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>supports</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>key_type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>linkkey</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfdpdr">BT_GEN_FID_DEL_PAIR_DEV_REQ</Name>
+			<OPCode>0x91</OPCode>
+			<Param>
+				<Name>pairId</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfdpdc">BT_GEN_FID_DEL_PAIR_DEV_CFM</Name>
+			<OPCode>0x8091</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>pairId</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfgpdlr">BT_GEN_FID_GET_PAIR_DEV_LIST_REQ</Name>
+			<OPCode>0x92</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfgpd c">BT_GEN_FID_GET_PAIR_DEV_ LIST_CFM</Name>
+			<OPCode>0x8092</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>number</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfpdii">BT_GEN_FID_PAIR_DEV_INFO_IND</Name>
+			<OPCode>0xC092</OPCode>
+			<Param>
+				<Name>pairId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>bdaddr</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>features</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfpdir">BT_GEN_FID_PAIR_DEV_INFO_RES</Name>
+			<OPCode>0x4092</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfpdici">BT_GEN_FID_PAIR_DEV_INFO_COMP_IND</Name>
+			<OPCode>0xC093</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfpdicr">BT_GEN_FID_PAIR_DEV_INFO_COMP_RES</Name>
+			<OPCode>0x4093</OPCode>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfgpdnr">BT_GEN_FID_GET_PAIR_DEV_NUM_REQ</Name>
+			<OPCode>0x93</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfgpdnc">BT_GEN_FID_GET_PAIR_DEV_NUM_CFM</Name>
+			<OPCode>0x8093</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>number</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfdapdr">BT_GEN_FID_DEL_ALL_PAIR_DEV_REQ</Name>
+			<OPCode>0x94</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfdapdc">BT_GEN_FID_DEL_ALL_PAIR_DEV_CFM</Name>
+			<OPCode>0x8094</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfscr1">BT_GEN_FID_SERVICE_CON_REQ</Name>
+			<OPCode>0x40</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>service</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>extend</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfscc1">BT_GEN_FID_SERVICE_CON_CFM</Name>
+			<OPCode>0x8040</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>extend</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsci">BT_GEN_FID_SERVICE_CON_IND</Name>
+			<OPCode>0xC040</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>service</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>feature</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>extend</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfscr2">BT_GEN_FID_SERVICE_CON_RES</Name>
+			<OPCode>0x4040</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfcai">BT_GEN_FID_CON_AUTHORIZE_IND</Name>
+			<OPCode>0xC041</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>service</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfcar">BT_GEN_FID_CON_AUTHORIZE_RES</Name>
+			<OPCode>0x4041</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>service</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>accept</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsdr">BT_GEN_FID_SERVICE_DISCON_REQ</Name>
+			<OPCode>0x42</OPCode>
+			<Param>
+				<Name>service</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>extend</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsdc">BT_GEN_FID_SERVICE_DISCON_CFM</Name>
+			<OPCode>0x8042</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>extend</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsdi">BT_GEN_FID_SERVICE_DISCON_IND</Name>
+			<OPCode>0xC042</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>service</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>extend</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsdr1">BT_GEN_FID_SERVICE_DISCON_RES</Name>
+			<OPCode>0x4042</OPCode>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsacr">BT_GEN_FID_SETUP_AUTO_CON_REQ</Name>
+			<OPCode>0x45</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>service</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>extend</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsacc">BT_GEN_FID_SETUP_AUTO_CON_CFM</Name>
+			<OPCode>0x8045</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfacci">BT_GEN_FID_AUTO_CON_COMP_IND</Name>
+			<OPCode>0xC045</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>service</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>extend</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfaccr">BT_GEN_FID_AUTO_CON_COMP_RES</Name>
+			<OPCode>0x4045</OPCode>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfcacr">BT_GEN_FID_CANCEL_AUTO_CON_REQ</Name>
+			<OPCode>0x46</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfcacc">BT_GEN_FID_CANCEL_AUTO_CON_CFM</Name>
+			<OPCode>0x8046</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfgacsr">BT_GEN_FID_GET_AUTO_CON_STATE_REQ</Name>
+			<OPCode>0x47</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfgacsc">BT_GEN_FID_GET_AUTO_CON_STATE_CFM</Name>
+			<OPCode>0x8047</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfgrr">BT_GEN_FID_GET_RSSI_REQ</Name>
+			<OPCode>0x50</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfgrc">BT_GEN_FID_GET_RSSI_CFM</Name>
+			<OPCode>0x8050</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>rssi</Name>
+				<Type>s8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfglqr">BT_GEN_FID_GET_LINK_QUALITY_REQ</Name>
+			<OPCode>0x51</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfglqc">BT_GEN_FID_GET_LINK_QUALITY_CFM</Name>
+			<OPCode>0x8051</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>link_quality</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gftmr">BT_GEN_FID_TEST_MODE_REQ</Name>
+			<OPCode>0x55</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gftmc">BT_GEN_FID_TEST_MODE_CFM</Name>
+			<OPCode>0x8055</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gffwr">BT_GEN_FID_FLASH_WRITE_REQ</Name>
+			<OPCode>0x83</OPCode>
+			<Param>
+				<Name>blockId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>data</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gffwc">BT_GEN_FID_FLASH_WRITE_CFM</Name>
+			<OPCode>0x8083</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>blockId</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gffrr">BT_GEN_FID_FLASH_READ_REQ</Name>
+			<OPCode>0x84</OPCode>
+			<Param>
+				<Name>blockId</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gffrc">BT_GEN_FID_FLASH_READ_CFM</Name>
+			<OPCode>0x8084</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>blockId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>data</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsalr">BT_GEN_FID_START_AUDIO_LOOPBACK_REQ</Name>
+			<OPCode>0x56</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsalc">BT_GEN_FID_START_AUDIO_LOOPBACK_CFM</Name>
+			<OPCode>0x8056</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsalr1">BT_GEN_FID_STOP_AUDIO_LOOPBACK_REQ</Name>
+			<OPCode>0x57</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsalc1">BT_GEN_FID_STOP_AUDIO_LOOPBACK_CFM</Name>
+			<OPCode>0x8057</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsar">BT_GEN_FID_SEARCH_ATTRIBUTE_REQ</Name>
+			<OPCode>0x60</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>timeout</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsac">BT_GEN_FID_SEARCH_ATTRIBUTE_CFM</Name>
+			<OPCode>0x8060</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsai">BT_GEN_FID_SEARCH_ATTRIBUTE_IND</Name>
+			<OPCode>0xC060</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>service</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>profile_version</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>extend</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsar1">BT_GEN_FID_SEARCH_ATTRIBUTE_RES</Name>
+			<OPCode>0x4060</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsci1">BT_GEN_FID_SEARCH_COMPLETE_IND</Name>
+			<OPCode>0xC061</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfscr3">BT_GEN_FID_SEARCH_COMPLETE_RES</Name>
+			<OPCode>0x4061</OPCode>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsdir">BT_GEN_FID_SEARCH_DEV_INFO_REQ</Name>
+			<OPCode>0x61</OPCode>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>timeout</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsdic">BT_GEN_FID_SEARCH_DEV_INFO_CFM</Name>
+			<OPCode>0x8061</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsdii">BT_GEN_FID_SEARCH_DEV_INFO_IND</Name>
+			<OPCode>0xC062</OPCode>
+			<Param>
+				<Name>specId</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>vendorId</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>productId</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>version</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>primaryRecord</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>vendorIDSource</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsdir1">BT_GEN_FID_SEARCH_DEV_INFO_RES</Name>
+			<OPCode>0x4062</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsdici">BT_GEN_FID_SEARCH_DEV_INFO_COMPLETE_IND</Name>
+			<OPCode>0xC063</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>remote</Name>
+				<Type>bdaddr</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsdicr">BT_GEN_FID_SEARCH_DEV_INFO_COMPLETE_RES</Name>
+			<OPCode>0x4063</OPCode>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfacr1">BT_GEN_FID_AUDIO_CONFIG_REQ</Name>
+			<OPCode>0x72</OPCode>
+			<Param>
+				<Name>Config</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfacc1">BT_GEN_FID_AUDIO_CONFIG_CFM</Name>
+			<OPCode>0x8072</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfgacr">BT_GEN_FID_GET_AUDIO_CONFIG_REQ</Name>
+			<OPCode>0x73</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfgacc">BT_GEN_FID_GET_AUDIO_CONFIG_CFM</Name>
+			<OPCode>0x8073</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>Config</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfsmr">BT_GEN_FID_SET_MIC_REQ</Name>
+			<OPCode>0x70</OPCode>
+			<Param>
+				<Name>level</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfsmc">BT_GEN_FID_SET_MIC_CFM</Name>
+			<OPCode>0x8070</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfssr1">BT_GEN_FID_SET_SPEAKER_REQ</Name>
+			<OPCode>0x71</OPCode>
+			<Param>
+				<Name>level</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfssc1">BT_GEN_FID_SET_SPEAKER_CFM</Name>
+			<OPCode>0x8071</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="GEN">
+			<Name alias="gfedr">BT_GEN_FID_ENTER_DFU_REQ</Name>
+			<OPCode>0x80</OPCode>
+		</CMD>
+		<CMD type="EVT" group="GEN">
+			<Name alias="gfedc">BT_GEN_FID_ENTER_DFU_CFM</Name>
+			<OPCode>0x8080</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT">
+			<Name>BT_FID_ERROR</Name>
+			<OPCode>0xBFFF</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>opcode</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfrir">BT_SPP_FID_REG_INSTANCE_REQ</Name>
+			<OPCode>0x101</OPCode>
+			<Param>
+				<Name>sdp_index</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>uuid_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>uuid</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfric">BT_SPP_FID_REG_INSTANCE_CFM</Name>
+			<OPCode>0x8101</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfdir">BT_SPP_FID_DEL_INSTANCE_REQ</Name>
+			<OPCode>0x102</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfdic">BT_SPP_FID_DEL_INSTANCE_CFM</Name>
+			<OPCode>0x8102</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfdr">BT_SPP_FID_DATASEND_REQ</Name>
+			<OPCode>0x103</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>data</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfdc">BT_SPP_FID_DATASEND_CFM</Name>
+			<OPCode>0x8103</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfri">BT_SPP_FID_RECEIVEDATA_IND</Name>
+			<OPCode>0xC102</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>data</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfrr">BT_SPP_FID_RECEIVEDATA_RES</Name>
+			<OPCode>0x4102</OPCode>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfuai">BT_SPP_FID_UNRECOGNISED_ATCMD_IND</Name>
+			<OPCode>0xC103</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>atcmd</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfuar">BT_SPP_FID_UNRECOGNISED_ATCMD_RES</Name>
+			<OPCode>0x4103</OPCode>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfgur">BT_SPP_FID_GET_UUID_REQ</Name>
+			<OPCode>0x104</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfguc">BT_SPP_FID_GET_UUID_CFM</Name>
+			<OPCode>0x8104</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>uuid_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>uuid</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfqur">BT_SPP_FID_QUERY_UUID_REQ</Name>
+			<OPCode>0x105</OPCode>
+			<Param>
+				<Name>addr</Name>
+				<Type>bdaddr</Type>
+			</Param>
+			<Param>
+				<Name>uuid_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>uuid</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfquc">BT_SPP_FID_QUERY_UUID_CFM</Name>
+			<OPCode>0x8105</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>support</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfscr">BT_SPP_FID_SUPPORT_CHARSET_REQ</Name>
+			<OPCode>0x150</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfscc">BT_SPP_FID_SUPPORT_CHARSET_CFM</Name>
+			<OPCode>0x8150</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>charsets</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfccr">BT_SPP_FID_CURRENT_CHARSET_REQ</Name>
+			<OPCode>0x151</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfccc">BT_SPP_FID_CURRENT_CHARSET_CFM</Name>
+			<OPCode>0x8151</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>charset</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfscr1">BT_SPP_FID_SET_CHARSET_REQ</Name>
+			<OPCode>0x152</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>charset</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfscc1">BT_SPP_FID_SET_CHARSET_CFM</Name>
+			<OPCode>0x8152</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfspsr">BT_SPP_FID_SUPPORT_PB_STORAGE_REQ</Name>
+			<OPCode>0x153</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfspsc">BT_SPP_FID_SUPPORT_PB_STORAGE_CFM</Name>
+			<OPCode>0x8153</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>storages</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfcpsr">BT_SPP_FID_CURRENT_PB_STORAGE_REQ</Name>
+			<OPCode>0x154</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP ">
+			<Name alias="sfcpsc">BT_SPP_FID_CURRENT_PB_STORAGE_CFM</Name>
+			<OPCode>0x8154</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>storage</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>used</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>total</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfspsr1">BT_SPP_FID_SELECT_PB_STORAGE_REQ</Name>
+			<OPCode>0x155</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>Storage</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfspsc1">BT_SPP_FID_SELECT_PB_STORAGE_CFM</Name>
+			<OPCode>0x8155</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfrper">BT_SPP_FID_READ_PB_ENTRY_REQ</Name>
+			<OPCode>0x156</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>index1</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>index2</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfrpec">BT_SPP_FID_READ_PB_ENTRY_CFM</Name>
+			<OPCode>0x8156</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sffper">BT_SPP_FID_FIND_PB_ENTRY_REQ</Name>
+			<OPCode>0x157</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>textLen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>text</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sffpec">BT_SPP_FID_FIND_PB_ENTRY_CFM</Name>
+			<OPCode>0x8157</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfpedi">BT_SPP_FID_PB_ENTRY_DATA_IND</Name>
+			<OPCode>0xC156</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>Index</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>number_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>number</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>type</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfpedr">BT_SPP_FID_PB_ENTRY_DATA_RES</Name>
+			<OPCode>0x4156</OPCode>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfpedci">BT_SPP_FID_PB_ENTRY_DATA_COMPLETE_IND</Name>
+			<OPCode>0xC159</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfpedcr">BT_SPP_FID_PB_ENTRY_DATA_COMPLETE_RES</Name>
+			<OPCode>0x4159</OPCode>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfpedar">BT_SPP_FID_PB_ENTRY_DATA_ABORT_REQ</Name>
+			<OPCode>0x158</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group=" SPP">
+			<Name alias=" fpedac">BT_ SPP_FID_PB_ENTRY_DATA_ABORT_CFM</Name>
+			<OPCode>0x8158</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfssfr">BT_SPP_FID_SUPPORT_SMS_FORMAT_REQ</Name>
+			<OPCode>0x170</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfssfc">BT_SPP_FID_SUPPORT_SMS_FORMAT_CFM</Name>
+			<OPCode>0x8170</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>format_data</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfcsfr">BT_SPP_FID_CURRENT_SMS_FORMAT_REQ</Name>
+			<OPCode>0x171</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfcsfc">BT_SPP_FID_CURRENT_SMS_FORMAT_CFM</Name>
+			<OPCode>0x8171</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>format</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfssfr1">BT_SPP_FID_SET_SMS_FORMAT_REQ</Name>
+			<OPCode>0x172</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>format</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfssfc1">BT_SPP_FID_SET_SMS_FORMAT_CFM</Name>
+			<OPCode>0x8172</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfslsr">BT_SPP_FID_SUPPORT_LIST_SMS_REQ</Name>
+			<OPCode>0x173</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfslsc">BT_SPP_FID_SUPPORT_LIST_SMS_CFM</Name>
+			<OPCode>0x8173</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>format</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sflsr">BT_SPP_FID_LIST_SMS_REQ</Name>
+			<OPCode>0x174</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>stat</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sflsc">BT_SPP_FID_LIST_SMS_CFM</Name>
+			<OPCode>0x8174</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfrsr">BT_SPP_FID_READ_SMS_REQ</Name>
+			<OPCode>0x175</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>index</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfrsc">BT_SPP_FID_READ_SMS_CFM</Name>
+			<OPCode>0x8175</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sflrsi">BT_SPP_FID_LIST_READ_SMS_IND</Name>
+			<OPCode>0xC176</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>index</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>state</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>alpha_length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>alpha_data</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>userdata_length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>userdata</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sflrsr">BT_SPP_FID_LIST_READ_SMS_RES</Name>
+			<OPCode>0x4176</OPCode>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sflrsci">BT_SPP_FID_LIST_READ_SMS_COMPLETED_IND</Name>
+			<OPCode>0xC177</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sflrscr">BT_SPP_FID_LIST_READ_SMS_COMPLETED_RES</Name>
+			<OPCode>0x4177</OPCode>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfssr">BT_SPP_FID_SEND_SMS_REQ</Name>
+			<OPCode>0x178</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>addresslen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>address</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfssc">BT_SPP_FID_SEND_SMS_CFM</Name>
+			<OPCode>0x8178</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfsdi">BT_SPP_FID_SENDWRITE_DATA_IND</Name>
+			<OPCode>0xC179</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfsdr">BT_SPP_FID_SENDWRITE_DATA_RES</Name>
+			<OPCode>0x4179</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>data</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfsci">BT_SPP_FID_SENDWRITE_COMPLETED_IND</Name>
+			<OPCode>0xC17A</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>result</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfscr2">BT_SPP_FID_SENDWRITE_COMPLETED_RES</Name>
+			<OPCode>0x417A</OPCode>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfwsr">BT_SPP_FID_WRITE_SMS_REQ</Name>
+			<OPCode>0x17B</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>addresslen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>address</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfwsc">BT_SPP_FID_WRITE_SMS_CFM</Name>
+			<OPCode>0x817B</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfssfr2">BT_SPP_FID_SEND_SMS_FROMSTORAGE_REQ</Name>
+			<OPCode>0x17C</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>index</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfssfc2">BT_SPP_FID_SEND_SMS_FROMSTORAGE_CFM</Name>
+			<OPCode>0x817C</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfssfi">BT_SPP_FID_SEND_SMS_FROMSTORAGE_IND</Name>
+			<OPCode>0xC17C</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mr</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfssfr3">BT_SPP_FID_SEND_SMS_FROMSTORAGE_RES</Name>
+			<OPCode>0x417C</OPCode>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfsctr">BT_SPP_FID_SUPPORT_CNMI_TYPE_REQ</Name>
+			<OPCode>0x17D</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfsctc">BT_SPP_FID_SUPPORT_CNMI_TYPE_CFM</Name>
+			<OPCode>0x817D</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mt</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>bm</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>ds</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfcctr">BT_SPP_FID_CURRENT_CNMI_TYPE_REQ</Name>
+			<OPCode>0x17E</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfcctc">BT_SPP_FID_CURRENT_CNMI_TYPE_CFM</Name>
+			<OPCode>0x817E</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mode</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mt</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>bm</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>ds</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfsnir">BT_SPP_FID_SET_NEWSMS_INDICATION_REQ</Name>
+			<OPCode>0x17F</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mt</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>bm</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>ds</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfsnic">BT_SPP_FID_SET_NEWSMS_INDICATION_CFM</Name>
+			<OPCode>0x817F</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfnci">BT_SPP_FID_NEWSMS_CMTI_IND</Name>
+			<OPCode>0xC180</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>index</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>memlen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfncr">BT_SPP_FID_NEWSMS_CMTI_RES</Name>
+			<OPCode>0x4180</OPCode>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfnci1">BT_SPP_FID_NEWSMS_CMT_IND</Name>
+			<OPCode>0xC181</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>addresslen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>address</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>datalen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>data</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfncr1">BT_SPP_FID_NEWSMS_CMT_RES</Name>
+			<OPCode>0x4181</OPCode>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfsssr">BT_SPP_FID_SUPPORT_SMS_STORAGE_REQ</Name>
+			<OPCode>0x182</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfsssc">BT_SPP_FID_SUPPORT_SMS_STORAGE_CFM</Name>
+			<OPCode>0x8182</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>storage</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfcssr">BT_SPP_FID_CURRENT_SMS_STORAGE_REQ</Name>
+			<OPCode>0x183</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfcssc">BT_SPP_FID_CURRENT_SMS_STORAGE_CFM</Name>
+			<OPCode>0x8183</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mem1used</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem1total</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem2used</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem2total</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem3used</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem3total</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>storage</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfsssr1">BT_SPP_FID_SELECT_SMS_STORAGE_REQ</Name>
+			<OPCode>0x184</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mem1len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem1</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>mem2len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem2</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>mem3len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem3</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfsssc1">BT_SPP_FID_SELECT_SMS_STORAGE_CFM</Name>
+			<OPCode>0x8184</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>nem1used</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem1total</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem2used</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem2total</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem3used</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem3total</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SPP">
+			<Name alias="sfdsr">BT_SPP_FID_DELETE_SMS_REQ</Name>
+			<OPCode>0x185</OPCode>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>index</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SPP">
+			<Name alias="sfdsc">BT_SPP_FID_DELETE_SMS_CFM</Name>
+			<OPCode>0x8185</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>spp_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfssi">BT_HFP_FID_SCO_STATUS_IND</Name>
+			<OPCode>0xC201</OPCode>
+			<Param>
+				<Name>con</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfssr">BT_HFP_FID_SCO_STATUS_RES</Name>
+			<OPCode>0x4201</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfatr">BT_HFP_FID_AUDIO_TRANSFER_REQ</Name>
+			<OPCode>0x203</OPCode>
+			<Param>
+				<Name>dir</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfatc">BT_HFP_FID_AUDIO_TRANSFER_CFM</Name>
+			<OPCode>0x8203</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>dir</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfscmr">BT_HFP_FID_SET_CVC_MODE_REQ</Name>
+			<OPCode>0x204</OPCode>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group=" HFP">
+			<Name alias=" fscmc">BT_ HFP_FID_SET_CVC_MODE_CFM</Name>
+			<OPCode>0x8204</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group=" HFP">
+			<Name alias=" fgcir">BT_ HFP_FID_GET_CVC_INFO_REQ</Name>
+			<OPCode>0x205</OPCode>
+		</CMD>
+		<CMD type="EVT" group=" HFP">
+			<Name alias=" fgcic">BT_ HFP_FID_GET_CVC_INFO_CFM</Name>
+			<OPCode>0x8205</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>version</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfirmsr">BT_HFP_FID_INTERNAL_RING_MODE_SET_REQ</Name>
+			<OPCode>0x211</OPCode>
+			<Param>
+				<Name>ring_mode</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfirmsc">BT_HFP_FID_INTERNAL_RING_MODE_SET_CFM</Name>
+			<OPCode>0x8211</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfirmgr">BT_HFP_FID_INTERNAL_RING_MODE_GET_REQ</Name>
+			<OPCode>0x212</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfirmgc">BT_HFP_FID_INTERNAL_RING_MODE_GET_CFM</Name>
+			<OPCode>0x8212</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfri">BT_HFP_FID_RING_IND</Name>
+			<OPCode>0xC211</OPCode>
+			<Param>
+				<Name>ring</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfrr">BT_HFP_FID_RING_RES</Name>
+			<OPCode>0x4211</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfroi">BT_HFP_FID_RING_OFF_IND</Name>
+			<OPCode>0xC212</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfror">BT_HFP_FID_RING_OFF_RES</Name>
+			<OPCode>0x4212</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfei">BT_HFP_FID_EVENT_IND</Name>
+			<OPCode>0xC210</OPCode>
+			<Param>
+				<Name>ind</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>Status </Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfer">BT_HFP_FID_EVENT_RES</Name>
+			<OPCode>0x4210</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfdr">BT_HFP_FID_DIAL_REQ</Name>
+			<OPCode>0x215</OPCode>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>num</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfdc">BT_HFP_FID_DIAL_CFM</Name>
+			<OPCode>0x8215</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfcsi">BT_HFP_FID_CALL_STATE_IND</Name>
+			<OPCode>0xC215</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfcsr">BT_HFP_FID_CALL_STATE_RES</Name>
+			<OPCode>0x4215</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfldr">BT_HFP_FID_LAST_DIAL_REQ</Name>
+			<OPCode>0x216</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfldc">BT_HFP_FID_LAST_DIAL_CFM</Name>
+			<OPCode>0x8216</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfmdr">BT_HFP_FID_MEM_DIAL_REQ</Name>
+			<OPCode>0x217</OPCode>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>num</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfmdc">BT_HFP_FID_MEM_DIAL_CFM</Name>
+			<OPCode>0x8217</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfcpr">BT_HFP_FID_CALL_PROCESS_REQ</Name>
+			<OPCode>0x218</OPCode>
+			<Param>
+				<Name>action</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfcpc">BT_HFP_FID_CALL_PROCESS_CFM</Name>
+			<OPCode>0x8218</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hftcr">BT_HFP_FID_TERMINATE_CALL_REQ</Name>
+			<OPCode>0x219</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hftcc">BT_HFP_FID_TERMINATE_CALL_CFM</Name>
+			<OPCode>0x8219</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfcer">BT_HFP_FID_CALLID_ENABLE_REQ</Name>
+			<OPCode>0x21A</OPCode>
+			<Param>
+				<Name>enable</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfciec">BT_HFP_FID_CALL_ID_ENABLE_CFM</Name>
+			<OPCode>0x821A</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfci">BT_HFP_FID_CLIP_IND</Name>
+			<OPCode>0xC21A</OPCode>
+			<Param>
+				<Name>type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>size</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>num</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>Length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfcr">BT_HFP_FID_CLIP_RES</Name>
+			<OPCode>0x421A</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfcwer">BT_HFP_FID_CALL_WAIT_ENABLE_REQ</Name>
+			<OPCode>0x21B</OPCode>
+			<Param>
+				<Name>enable</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfcwec">BT_HFP_FID_CALL_WAIT_ENABLE_CFM</Name>
+			<OPCode>0x821B</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfcwi">BT_HFP_FID_CALL_WAIT_IND</Name>
+			<OPCode>0xC21B</OPCode>
+			<Param>
+				<Name>type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>size</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>num</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>Length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfcwr">BT_HFP_FID_CALL_WAIT_RES</Name>
+			<OPCode>0x421B</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfgcclr">BT_HFP_FID_GET_CURRENT_CALL_LIST_REQ</Name>
+			<OPCode>0x21E</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfgcclc">BT_HFP_FID_GET_CURRENT_CALL_LIST_CFM</Name>
+			<OPCode>0x821E</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfgccli">BT_HFP_FID_GET_CURRENT_CALL_LIST_IND</Name>
+			<OPCode>0xC21E</OPCode>
+			<Param>
+				<Name>idx</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>dir</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mpty</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>size</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>num</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfgcclr1">BT_HFP_FID_GET_CURRENT_CALL_LIST_RES</Name>
+			<OPCode>0x421E</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfvrr">BT_HFP_FID_VOICE_RECOGNIZE_REQ</Name>
+			<OPCode>0x220</OPCode>
+			<Param>
+				<Name>operation</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfvrc">BT_HFP_FID_VOICE_RECOGNIZE_CFM</Name>
+			<OPCode>0x8220</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfvri">BT_HFP_FID_VOICE_RECOGNIZE_IND</Name>
+			<OPCode>0xC220</OPCode>
+			<Param>
+				<Name>operation</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfvrr1">BT_HFP_FID_VOICE_RECOGNIZE_RES</Name>
+			<OPCode>0x4220</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfvtr">BT_HFP_FID_VOICE_TAG_REQ</Name>
+			<OPCode>0x221</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfvtc">BT_HFP_FID_VOICE_TAG_CFM</Name>
+			<OPCode>0x8221</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfvti">BT_HFP_FID_VOICE_TAG_IND</Name>
+			<OPCode>0xC221</OPCode>
+			<Param>
+				<Name>size</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>num</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfvtr1">BT_HFP_FID_VOICE_TAG_RES</Name>
+			<OPCode>0x4221</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfdcr">BT_HFP_FID_DTMF_CODE_REQ</Name>
+			<OPCode>0x225</OPCode>
+			<Param>
+				<Name>code</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfdcc">BT_HFP_FID_DTMF_CODE_CFM</Name>
+			<OPCode>0x8225</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfrhr">BT_HFP_FID_RESPONSE_HOLD_REQ</Name>
+			<OPCode>0x22A</OPCode>
+			<Param>
+				<Name>action</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfrhc">BT_HFP_FID_RESPONSE_HOLD_CFM</Name>
+			<OPCode>0x822A</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfchr">BT_HFP_FID_CALL_HOLD_REQ</Name>
+			<OPCode>0x22B</OPCode>
+			<Param>
+				<Name>action</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>index</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfchc">BT_HFP_FID_CALL_HOLD_CFM</Name>
+			<OPCode>0x822B</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfsnr">BT_HFP_FID_SUBSCRIBER_NUM_REQ</Name>
+			<OPCode>0x230</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfsnc">BT_HFP_FID_SUBSCRIBER_NUM_CFM</Name>
+			<OPCode>0x8230</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>service</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>size</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>num</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfnor">BT_HFP_FID_NETWORK_OPERATOR_REQ</Name>
+			<OPCode>0x235</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfnoc">BT_HFP_FID_NETWORK_OPERATOR_CFM</Name>
+			<OPCode>0x8235</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfseccr">BT_HFP_FID_SIRI_ENABLE_CUSTOM_CMD_REQ</Name>
+			<OPCode>0x240</OPCode>
+			<Param>
+				<Name>vendorID</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>productID</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>version</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>features</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfseccc">BT_HFP_FID_SIRI_ENABLE_CUSTOM_CMD_CFM</Name>
+			<OPCode>0x8240</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>features</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfsgsr">BT_HFP_FID_SIRI_GET_STATE_REQ</Name>
+			<OPCode>0x241</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfsgsc">BT_HFP_FID_SIRI_GET_STATE_CFM</Name>
+			<OPCode>0x8241</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>state</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfssi1">BT_HFP_FID_SIRI_STATE_IND</Name>
+			<OPCode>0xC241</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfssr1">BT_HFP_FID_SIRI_STATE_RES</Name>
+			<OPCode>0x4241</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfsinsr">BT_HFP_FID_SIRI_INFORM_NR_STATE_REQ</Name>
+			<OPCode>0x242</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfsinsc">BT_HFP_FID_SIRI_INFORM_NR_STATE_CFM</Name>
+			<OPCode>0x8242</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfssnsi">BT_HFP_FID_SIRI_SET_NR_STATE_IND</Name>
+			<OPCode>0xC242</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfssnsr">BT_HFP_FID_SIRI_SET_NR_STATE_RES</Name>
+			<OPCode>0x4242</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfssefmr">BT_HFP_FID_SIRI_SET_EYE_FREE_MODE_REQ</Name>
+			<OPCode>0x243</OPCode>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfssefmc">BT_HFP_FID_SIRI_SET_EYE_FREE_MODE_CFM</Name>
+			<OPCode>0x8243</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfuai">BT_HFP_FID_UNRECOGNISED_ATCMD_IND</Name>
+			<OPCode>0xC236</OPCode>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>atcmd</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfuar">BT_HFP_FID_UNRECOGNISED_ATCMD_RES</Name>
+			<OPCode>0x4236</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfscr">BT_HFP_FID_SUPPORT_CHARSET_REQ</Name>
+			<OPCode>0x250</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfscc">BT_HFP_FID_SUPPORT_CHARSET_CFM</Name>
+			<OPCode>0x8250</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>charsets</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfccr">BT_HFP_FID_CURRENT_CHARSET_REQ</Name>
+			<OPCode>0x251</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfccc">BT_HFP_FID_CURRENT_CHARSET_CFM</Name>
+			<OPCode>0x8251</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>charset</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfscr1">BT_HFP_FID_SET_CHARSET_REQ</Name>
+			<OPCode>0x252</OPCode>
+			<Param>
+				<Name>charset</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfscc1">BT_HFP_FID_SET_CHARSET_CFM</Name>
+			<OPCode>0x8252</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfspsr">BT_HFP_FID_SUPPORT_PB_STORAGE_REQ</Name>
+			<OPCode>0x253</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfspsc">BT_HFP_FID_SUPPORT_PB_STORAGE_CFM</Name>
+			<OPCode>0x8253</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>storages</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfcpsr">BT_HFP_FID_CURRENT_PB_STORAGE_REQ</Name>
+			<OPCode>0x254</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfcpsc">BT_HFP_FID_CURRENT_PB_STORAGE_CFM</Name>
+			<OPCode>0x8254</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>storage</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>used</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>total</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfspsr1">BT_HFP_FID_SELECT_PB_STORAGE_REQ</Name>
+			<OPCode>0x255</OPCode>
+			<Param>
+				<Name>Storage</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfspsc1">BT_HFP_FID_SELECT_PB_STORAGE_CFM</Name>
+			<OPCode>0x8255</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfrper">BT_HFP_FID_READ_PB_ENTRY_REQ</Name>
+			<OPCode>0x256</OPCode>
+			<Param>
+				<Name>index1</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>index2</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfrpec">BT_HFP_FID_READ_PB_ENTRY_CFM</Name>
+			<OPCode>0x8256</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hffper">BT_HFP_FID_FIND_PB_ENTRY_REQ</Name>
+			<OPCode>0x257</OPCode>
+			<Param>
+				<Name>textLen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>text</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hffpec">BT_HFP_FID_FIND_PB_ENTRY_CFM</Name>
+			<OPCode>0x8257</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfpedi">BT_HFP_FID_PB_ENTRY_DATA_IND</Name>
+			<OPCode>0xC256</OPCode>
+			<Param>
+				<Name>Index</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>number_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>number</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>type</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfpedr">BT_HFP_FID_PB_ENTRY_DATA_RES</Name>
+			<OPCode>0x4256</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hf edci">BT_HFP_FID_ PB_ENTRY_DATA_COMPLETE_IND</Name>
+			<OPCode>0xC259</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hf edcr">BT_HFP_FID_ PB_ENTRY_DATA_COMPLETE_RES</Name>
+			<OPCode>0x4259</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfpedar">BT_HFP_FID_PB_ENTRY_DATA_ABORT_REQ</Name>
+			<OPCode>0x258</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfpedac">BT_HFP_FID_PB_ENTRY_DATA_ABORT_CFM</Name>
+			<OPCode>0x8258</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfssfr">BT_HFP_FID_SUPPORT_SMS_FORMAT_REQ</Name>
+			<OPCode>0x270</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfssfc">BT_HFP_FID_SUPPORT_SMS_FORMAT_CFM</Name>
+			<OPCode>0x8270</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>format_data</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfcsfr">BT_HFP_FID_CURRENT_SMS_FORMAT_REQ</Name>
+			<OPCode>0x271</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfcsfc">BT_HFP_FID_CURRENT_SMS_FORMAT_CFM</Name>
+			<OPCode>0x8271</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>format</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfssfr1">BT_HFP_FID_SET_SMS_FORMAT_REQ</Name>
+			<OPCode>0x272</OPCode>
+			<Param>
+				<Name>format</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfssfc1">BT_HFP_FID_SET_SMS_FORMAT_CFM</Name>
+			<OPCode>0x8272</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfslsr">BT_HFP_FID_SUPPORT_LIST_SMS_REQ</Name>
+			<OPCode>0x273</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfslsc">BT_HFP_FID_SUPPORT_LIST_SMS_CFM</Name>
+			<OPCode>0x8273</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>format</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hflsr">BT_HFP_FID_LIST_SMS_REQ</Name>
+			<OPCode>0x274</OPCode>
+			<Param>
+				<Name>stat</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hflsc">BT_HFP_FID_LIST_SMS_CFM</Name>
+			<OPCode>0x8274</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfrsr">BT_HFP_FID_READ_SMS_REQ</Name>
+			<OPCode>0x275</OPCode>
+			<Param>
+				<Name>index</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfrsc">BT_HFP_FID_READ_SMS_CFM</Name>
+			<OPCode>0x8275</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hflrsi">BT_HFP_FID_LIST_READ_SMS_IND</Name>
+			<OPCode>0xC276</OPCode>
+			<Param>
+				<Name>index</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>state</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>alpha_length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>alpha_data</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>userdata_length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>userdata</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hflrsr">BT_HFP_FID_LIST_READ_SMS_RES</Name>
+			<OPCode>0x4276</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hflrsci">BT_HFP_FID_LIST_READ_SMS_COMPLETED_IND</Name>
+			<OPCode>0xC277</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hflrscr">BT_HFP_FID_LIST_READ_SMS_COMPLETED_RES</Name>
+			<OPCode>0x4277</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfssr2">BT_HFP_FID_SEND_SMS_REQ</Name>
+			<OPCode>0x278</OPCode>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>addresslen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>address</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfssc">BT_HFP_FID_SEND_SMS_CFM</Name>
+			<OPCode>0x8278</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfsdi">BT_HFP_FID_SENDWRITE_DATA_IND</Name>
+			<OPCode>0xC279</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfsdr">BT_HFP_FID_SENDWRITE_DATA_RES</Name>
+			<OPCode>0x4279</OPCode>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>data</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfsci">BT_HFP_FID_SENDWRITE_COMPLETED_IND</Name>
+			<OPCode>0xC27A</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>result</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfscr2">BT_HFP_FID_SENDWRITE_COMPLETED_RES</Name>
+			<OPCode>0x427A</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfwsr">BT_HFP_FID_WRITE_SMS_REQ</Name>
+			<OPCode>0x27B</OPCode>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>addresslen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>address</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfwsc">BT_HFP_FID_WRITE_SMS_CFM</Name>
+			<OPCode>0x827B</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfssfr2">BT_HFP_FID_SEND_SMS_FROMSTORAGE_REQ</Name>
+			<OPCode>0x27C</OPCode>
+			<Param>
+				<Name>index</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfssfc2">BT_HFP_FID_SEND_SMS_FROMSTORAGE_CFM</Name>
+			<OPCode>0x827C</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfssfi">BT_HFP_FID_SEND_SMS_FROMSTORAGE_IND</Name>
+			<OPCode>0xC27C</OPCode>
+			<Param>
+				<Name>mr</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfssfr3">BT_HFP_FID_SEND_SMS_FROMSTORAGE_RES</Name>
+			<OPCode>0x427C</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfsctr">BT_HFP_FID_SUPPORT_CNMI_TYPE_REQ</Name>
+			<OPCode>0x27D</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfsctc">BT_HFP_FID_SUPPORT_CNMI_TYPE_CFM</Name>
+			<OPCode>0x827D</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mt</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>bm</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>ds</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfcctr">BT_HFP_FID_CURRENT_CNMI_TYPE_REQ</Name>
+			<OPCode>0x27E</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfcctc">BT_HFP_FID_CURRENT_CNMI_TYPE_CFM</Name>
+			<OPCode>0x827E</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mode</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mt</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>bm</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>ds</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfsnir">BT_HFP_FID_SET_NEWSMS_INDICATION_REQ</Name>
+			<OPCode>0x27F</OPCode>
+			<Param>
+				<Name>mode</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mt</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>bm</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>ds</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfsnic">BT_HFP_FID_SET_NEWSMS_INDICATION_CFM</Name>
+			<OPCode>0x827F</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfnci">BT_HFP_FID_NEWSMS_CMTI_IND</Name>
+			<OPCode>0xC280</OPCode>
+			<Param>
+				<Name>index</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>memlen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfncr">BT_HFP_FID_NEWSMS_CMTI_RES</Name>
+			<OPCode>0x4280</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfnci1">BT_HFP_FID_NEWSMS_CMT_IND</Name>
+			<OPCode>0xC281</OPCode>
+			<Param>
+				<Name>addresslen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>address</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>datalen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>data</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfncr1">BT_HFP_FID_NEWSMS_CMT_RES</Name>
+			<OPCode>0x4281</OPCode>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfsssr">BT_HFP_FID_SUPPORT_SMS_STORAGE_REQ</Name>
+			<OPCode>0x282</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfsssc">BT_HFP_FID_SUPPORT_SMS_STORAGE_CFM</Name>
+			<OPCode>0x8282</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>storage</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfcssr">BT_HFP_FID_CURRENT_SMS_STORAGE_REQ</Name>
+			<OPCode>0x283</OPCode>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfcssc">BT_HFP_FID_CURRENT_SMS_STORAGE_CFM</Name>
+			<OPCode>0x8283</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>mem1used</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem1total</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem2used</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem2total</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem3used</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem3total</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>storage</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfsssr1">BT_HFP_FID_SELECT_SMS_STORAGE_REQ</Name>
+			<OPCode>0x284</OPCode>
+			<Param>
+				<Name>mem1len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem1</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>mem2len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem2</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>mem3len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem3</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfsssc1">BT_HFP_FID_SELECT_SMS_STORAGE_CFM</Name>
+			<OPCode>0x8284</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>nem1used</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem1total</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem2used</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem2total</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem3used</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>mem3total</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="HFP">
+			<Name alias="hfdsr">BT_HFP_FID_DELETE_SMS_REQ</Name>
+			<OPCode>0x285</OPCode>
+			<Param>
+				<Name>index</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="HFP">
+			<Name alias="hfdsc">BT_HFP_FID_DELETE_SMS_CFM</Name>
+			<OPCode>0x8285</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afrlci">BT_AVP_FID_RCP_LINK_CONNECT_IND</Name>
+			<OPCode>0xC301</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>version</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>feature</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afrlcr">BT_AVP_FID_RCP_LINK_CONNECT_RES</Name>
+			<OPCode>0x4301</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afrldi">BT_AVP_FID_RCP_LINK_DISCONNECT_IND</Name>
+			<OPCode>0xC302</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afrldr">BT_AVP_FID_RCP_LINK_DISCONNECT_RES</Name>
+			<OPCode>0x4302</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afblci">BT_AVP_FID_BROWSING_LINK_CONNECT_IND</Name>
+			<OPCode>0xC303</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afblcr">BT_AVP_FID_BROWSING_LINK_CONNECT_RES</Name>
+			<OPCode>0x4303</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afbldi">BT_AVP_FID_BROWSING_LINK_DISCONNECT_IND</Name>
+			<OPCode>0xC304</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afbldr">BT_AVP_FID_BROWSING_LINK_DISCONNECT_RES</Name>
+			<OPCode>0x4304</OPCode>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afmsr">BT_AVP_FID_MEDIA_START_REQ</Name>
+			<OPCode>0x305</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afmsc">BT_AVP_FID_MEDIA_START_CFM</Name>
+			<OPCode>0x8305</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afsoi">BT_AVP_FID_STREAMING_ON_IND</Name>
+			<OPCode>0xC305</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>sourceId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>rate</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afsor">BT_AVP_FID_STREAMING_ON_RES</Name>
+			<OPCode>0x4305</OPCode>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afmpr">BT_AVP_FID_MEDIA_PAUSE_REQ</Name>
+			<OPCode>0x306</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afmpc">BT_AVP_FID_MEDIA_PAUSE_CFM</Name>
+			<OPCode>0x8306</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afsoi1">BT_AVP_FID_STREAMING_OFF_IND</Name>
+			<OPCode>0xC306</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>sourceId</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afsor1">BT_AVP_FID_STREAMING_OFF_RES</Name>
+			<OPCode>0x4306</OPCode>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afptr">BT_AVP_FID_PASS_THROUGH_REQ</Name>
+			<OPCode>0x310</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>subunit_type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>subunit_id</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>state</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>opid</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afptc">BT_AVP_FID_PASS_THROUGH_CFM</Name>
+			<OPCode>0x8310</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afvdr">BT_AVP_FID_VENDOR_DENPENDENT_REQ</Name>
+			<OPCode>0x311</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>subunit_type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>subunit_id</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>ctype</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>company_id</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>size_operation_data</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>operation_data</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afvdc">BT_AVP_FID_VENDOR_DENPENDENT_CFM</Name>
+			<OPCode>0x8311</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afvddi">BT_AVP_FID_VENDOR_DENPENDENT_DATA_IND</Name>
+			<OPCode>0xC311</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>data_size</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>data</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afvddr">BT_AVP_FID_VENDOR_DENPENDENT_DATA_RES</Name>
+			<OPCode>0x4311</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afvddci">BT_AVP_FID_VENDOR_DENPENDENT_DATA_COMP_IND</Name>
+			<OPCode>0xC312</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afvddcr">BT_AVP_FID_VENDOR_DENPENDENT_DATA_COMP_RES</Name>
+			<OPCode>0x4312</OPCode>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afuir">BT_AVP_FID_UNIT_INFO_REQ</Name>
+			<OPCode>0x315</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afuic">BT_AVP_FID_UNIT_INFO_CFM</Name>
+			<OPCode>0x8315</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>subunit_type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>subunit_id</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>company_id</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afsir">BT_AVP_FID_SUBUNIT_INFO_REQ</Name>
+			<OPCode>0x316</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>page</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afsic">BT_AVP_FID_SUBUNIT_INFO_CFM</Name>
+			<OPCode>0x8316</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>page</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>page_data</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afgcr">BT_AVP_FID_GET_CAPABILITIES_REQ</Name>
+			<OPCode>0x317</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>caps</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afgcc">BT_AVP_FID_GET_CAPABILITIES_CFM</Name>
+			<OPCode>0x8317</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>caps</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>number_of_caps</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>size_caps_list</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>caps_list</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afgpsr">BT_AVP_FID_GET_PLAY_STATUS_REQ</Name>
+			<OPCode>0x318</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afgpsc">BT_AVP_FID_GET_PLAY_STATUS_CFM</Name>
+			<OPCode>0x8318</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>song_length</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>song_elapsed</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>play_status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afrnr">BT_AVP_FID_REGISTER_NOTIFICATION_REQ</Name>
+			<OPCode>0x320</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>event_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>playback_interval</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afrnc">BT_AVP_FID_REGISTER_NOTIFICATION_CFM</Name>
+			<OPCode>0x8320</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afepsci">BT_AVP_FID_EVT_PLAYBACK_STATUS_CHANGED_IND</Name>
+			<OPCode>0xC320</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>play_status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afepscr">BT_AVP_FID_EVT_PLAYBACK_STATUS_CHANGED_RES</Name>
+			<OPCode>0x4320</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afetci">BT_AVP_FID_EVT_TRACK_CHANGED_IND</Name>
+			<OPCode>0xC321</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>track_index_high</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>track_index_low</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afetcr">BT_AVP_FID_EVT_TRACK_CHANGED_RES</Name>
+			<OPCode>0x4321</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afetrei">BT_AVP_FID_EVT_TRACK_REACHED_END_IND</Name>
+			<OPCode>0xC322</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afetrer">BT_AVP_FID_EVT_TRACK_REACHED_END_RES</Name>
+			<OPCode>0x4322</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afetrsi">BT_AVP_FID_EVT_TRACK_REACHED_START_IND</Name>
+			<OPCode>0xC323</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afetrsr">BT_AVP_FID_EVT_TRACK_REACHED_START_RES</Name>
+			<OPCode>0x4323</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afeppci">BT_AVP_FID_EVT_PLAYBACK_POS_CHANGED_IND</Name>
+			<OPCode>0xC324</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>playback_pos</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afeppcr">BT_AVP_FID_EVT_PLAYBACK_POS_CHANGED_RES</Name>
+			<OPCode>0x4324</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afebsci">BT_AVP_FID_EVT_BATTERY_STATUS_CHANGED_IND</Name>
+			<OPCode>0xC325</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>battery_status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afebscr">BT_AVP_FID_EVT_BATTERY_STATUS_CHANGED_RES</Name>
+			<OPCode>0x4325</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afessci">BT_AVP_FID_EVT_SYSTEM_STATUS_CHANGED_IND</Name>
+			<OPCode>0xC326</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>system_status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afesscr">BT_AVP_FID_EVT_SYSTEM_STATUS_CHANGED_RES</Name>
+			<OPCode>0x4326</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afepasci">BT_AVP_FID_EVT_PLAYER_APP_SETTING_CHANGED_IND</Name>
+			<OPCode>0xC327</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>number_of_attributes</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>size_attributes</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>attributes</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afepascr">BT_AVP_FID_EVT_PLAYER_APP_SETTING_CHANGED_RES</Name>
+			<OPCode>0x4327</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afenpcci">BT_AVP_FID_EVT_NOW_PLAYING_CONTENT_CHANGED_IND</Name>
+			<OPCode>0xC328</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afenpccr">BT_AVP_FID_EVT_NOW_PLAYING_CONTENT_CHANGED_RES</Name>
+			<OPCode>0x4328</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afeapci">BT_AVP_FID_EVT_AVAILABLE_PLAYERS_CHANGED_IND</Name>
+			<OPCode>0xC329</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afeapcr">BT_AVP_FID_EVT_AVAILABLE_PLAYERS_CHANGED_RES</Name>
+			<OPCode>0x4329</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afeapci1">BT_AVP_FID_EVT_ADDRESSED_PLAYER_CHANGED_IND</Name>
+			<OPCode>0xC32A</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>player_id</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>uid_counter</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afeapcr1">BT_AVP_FID_EVT_ADDRESSED_PLAYER_CHANGED_RES</Name>
+			<OPCode>0x432A</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afeuci">BT_AVP_FID_EVT_UIDS_CHANGED_IND</Name>
+			<OPCode>0xC32B</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>uid_counter</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afeucr">BT_AVP_FID_EVT_UIDS_CHANGED_RES</Name>
+			<OPCode>0x432B</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afevci">BT_AVP_FID_EVT_VOLUME_CHANGED_IND</Name>
+			<OPCode>0xC32C</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>volume</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afevcr">BT_AVP_FID_EVT_VOLUME_CHANGED_RES</Name>
+			<OPCode>0x432C</OPCode>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="aflaar">BT_AVP_FID_LIST_APP_ATTRIBUTE_REQ</Name>
+			<OPCode>0x330</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="aflaac">BT_AVP_FID_LIST_APP_ATTRIBUTE_CFM</Name>
+			<OPCode>0x8330</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>number_of_attributes</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>size_attributes</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>attributes</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="aflavr">BT_AVP_FID_LIST_APP_VALUE_REQ</Name>
+			<OPCode>0x331</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>attributeId</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="aflavc">BT_AVP_FID_LIST_APP_VALUE_CFM</Name>
+			<OPCode>0x8331</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>number_of_values</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>size_values</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>values</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afgavr">BT_AVP_FID_GET_APP_VALUE_REQ</Name>
+			<OPCode>0x332</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>attributes</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afgavc">BT_AVP_FID_GET_APP_VALUE_CFM</Name>
+			<OPCode>0x8332</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>number_of_values</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>size_values</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>values</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afsavr">BT_AVP_FID_SET_APP_VALUE_REQ</Name>
+			<OPCode>0x333</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>attributeId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>value</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afsavc">BT_AVP_FID_SET_APP_VALUE_CFM</Name>
+			<OPCode>0x8333</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afgaatr">BT_AVP_FID_GET_APP_ATTRIBUTE_TEXT_REQ</Name>
+			<OPCode>0x334</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>attributes</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afgaatc">BT_AVP_FID_GET_APP_ATTRIBUTE_TEXT_CFM</Name>
+			<OPCode>0x8334</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>number_of_attributes</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afaatdi">BT_AVP_FID_APP_ATTRIBUTE_TEXT_DATA_IND</Name>
+			<OPCode>0xC334</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>attributeId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>charSet</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>textLen</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>text</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afaatdr">BT_AVP_FID_APP_ATTRIBUTE_TEXT_DATA_RES</Name>
+			<OPCode>0x4334</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afaatdci">BT_AVP_FID_APP_ATTRIBUTE_TEXT_DATA_COMP_IND</Name>
+			<OPCode>0xC335</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afaatdcr">BT_AVP_FID_APP_ATTRIBUTE_TEXT_DATA_COMP_RES</Name>
+			<OPCode>0x4335</OPCode>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afgavtr">BT_AVP_FID_GET_APP_VALUE_TEXT_REQ</Name>
+			<OPCode>0x336</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>attribute_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>values</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afgavtc">BT_AVP_FID_GET_APP_VALUE_TEXT_CFM</Name>
+			<OPCode>0x8336</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>number_of_attributes</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afavtdi">BT_AVP_FID_APP_VALUE_TEXT_DATA_IND</Name>
+			<OPCode>0xC336</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>valueId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>charSet</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>textLen</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>text</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afa tdr">BT_AVP_FID_APP_ VALUE_TEXT_DATA_RES</Name>
+			<OPCode>0x4336</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afa tdci">BT_AVP_FID_APP_ VALUE _TEXT_DATA_COMP_IND</Name>
+			<OPCode>0xC337</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afavtdcr">BT_AVP_FID_APP_VALUE_TEXT_DATA_COMP_RES</Name>
+			<OPCode>0x4337</OPCode>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afgear">BT_AVP_FID_GET_ELEMENT_ATTRIBUTES_REQ</Name>
+			<OPCode>0x340</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>attributes</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afgeac">BT_AVP_FID_GET_ELEMENT_ATTRIBUTES_CFM</Name>
+			<OPCode>0x8340</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>number_of_attributes</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afeadi">BT_AVP_FID_ELEMENT_ATTRIBUTES_DATA_IND</Name>
+			<OPCode>0xC340</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>attributeId</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>charSet</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>nameLen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afeadr">BT_AVP_FID_ELEMENT_ATTRIBUTES_DATA_RES</Name>
+			<OPCode>0x4340</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afeadci">BT_AVP_FID_ELEMENT_ATTRIBUTES_DATA_COMP_IND</Name>
+			<OPCode>0xC341</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afeadcr">BT_AVP_FID_ELEMENT_ATTRIBUTES_DATA_COMP_RES</Name>
+			<OPCode>0x4341</OPCode>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afibsr">BT_AVP_FID_INFORM_BATTERY_STATUS_REQ</Name>
+			<OPCode>0x342</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>battery_status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afibsc">BT_AVP_FID_INFORM_BATTERY_STATUS_CFM</Name>
+			<OPCode>0x8342</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="aficsr">BT_AVP_FID_INFORM_CHARACTER_SET_REQ</Name>
+			<OPCode>0x343</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>attributes</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="aficsc">BT_AVP_FID_INFORM_CHARACTER_SET_CFM</Name>
+			<OPCode>0x8343</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afsavr1">BT_AVP_FID_SET_ABSOLUTE_VOLUME_REQ</Name>
+			<OPCode>0x344</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>volume</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afsavc1">BT_AVP_FID_SET_ABSOLUTE_VOLUME_CFM</Name>
+			<OPCode>0x8344</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>volume</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afsapr">BT_AVP_FID_SET_ADDRESSED_PLAYER_REQ</Name>
+			<OPCode>0x345</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>player_id</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afsapc">BT_AVP_FID_SET_ADDRESSED_PLAYER_CFM</Name>
+			<OPCode>0x8345</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afpir">BT_AVP_FID_PLAY_ITEM_REQ</Name>
+			<OPCode>0x346</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>scope</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>uid_high</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>uid_low</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>uid_counter</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afpic">BT_AVP_FID_PLAY_ITEM_CFM</Name>
+			<OPCode>0x8346</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afanpr">BT_AVP_FID_ADDTO_NOW_PLAYING_REQ</Name>
+			<OPCode>0x347</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>scope</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>uid_high</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>uid_low</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>uid_counter</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afanpc">BT_AVP_FID_ADDTO_NOW_PLAYING_CFM</Name>
+			<OPCode>0x8347</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afgnr">BT_AVP_FID_GROUP_NAVIGATION_REQ</Name>
+			<OPCode>0x348</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>operation</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afgnc">BT_AVP_FID_GROUP_NAVIGATION_CFM</Name>
+			<OPCode>0x8348</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afbspr">BT_AVP_FID_BROWSE_SET_PLAYER_REQ</Name>
+			<OPCode>0x350</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>player_id</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afbspc">BT_AVP_FID_BROWSE_SET_PLAYER_CFM</Name>
+			<OPCode>0x8350</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>uid_counter </Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>num_items</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>char_type</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>folder_depth</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afbspdi">BT_AVP_FID_BROWSE_SET_PLAYER_DATA_IND</Name>
+			<OPCode>0xC350</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>nameLen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afbspdr">BT_AVP_FID_BROWSE_SET_PLAYER_DATA_RES</Name>
+			<OPCode>0x4350</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afbspdci">BT_AVP_FID_BROWSE_SET_PLAYER_DATA_COMP_IND</Name>
+			<OPCode>0xC351</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afbspdcr">BT_AVP_FID_BROWSE_SET_PLAYER_DATA_COMP_RES</Name>
+			<OPCode>0x4351</OPCode>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afbcpr">BT_AVP_FID_BROWSE_CHANGE_PATH_REQ</Name>
+			<OPCode>0x352</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>direction</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>folder_uid_high</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>folder_uid_low</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>uid_counter</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afbcpc">BT_AVP_FID_BROWSE_CHANGE_PATH_CFM</Name>
+			<OPCode>0x8352</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>num_items</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afbgiar">BT_AVP_FID_BROWSE_GET_ITEM_ATTRIBUTES_REQ</Name>
+			<OPCode>0x353</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>scope</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>uid_high</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>uid_low</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>uid_counter</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>attributes</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afbgiac">BT_AVP_FID_BROWSE_GET_ITEM_ATTRIBUTES_CFM</Name>
+			<OPCode>0x8353</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>num_attributes</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afbiadi">BT_AVP_FID_BROWSE _ITEM_ATTRIBUTES_DATA_IND</Name>
+			<OPCode>0xC353</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>attributeId</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>charSet</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>itemLen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>item</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afbiadr">BT_AVP_FID_BROWSE _ITEM_ATTRIBUTES_DATA_RES</Name>
+			<OPCode>0x4353</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afbiadci">BT_AVP_FID_BROWSE _ITEM_ATTRIBUTES_DATA_COMP_IND</Name>
+			<OPCode>0xC354</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afbiadcr">BT_AVP_FID_BROWSE _ITEM_ATTRIBUTES_DATA_COMP_RES</Name>
+			<OPCode>0x4354</OPCode>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afbgfir">BT_AVP_FID_BROWSE_GET_FOLDER_ITEM_REQ</Name>
+			<OPCode>0x355</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>scope</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>start</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>end</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>attributes</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afbgfic">BT_AVP_FID_BROWSE_GET_FOLDER_ITEM_CFM</Name>
+			<OPCode>0x8355</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>uid_counter</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>num_item</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afbmpidi">BT_AVP_FID_BROWSE_MEDIA_PLAYER_ITEM_DATA_IND</Name>
+			<OPCode>0xC356</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>playerId</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>majorPlayerType</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>playerSubType</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>playStatus</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>FeatureMask1</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>FeatureMask2</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>FeatureMask3</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>FeatureMask4</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>charSet</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>itemLen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>item</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afbmpidr">BT_AVP_FID_BROWSE_MEDIA_PLAYER_ITEM_DATA_RES</Name>
+			<OPCode>0x4356</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afbmeidi">BT_AVP_FID_BROWSE_MEDIA_ELEMENT_ITEM_DATA_IND</Name>
+			<OPCode>0xC357</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>uidHigh</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>uidLow</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>mediaType</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>charSet</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>itemLen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>item</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afbmeidr">BT_AVP_FID_BROWSE_MEDIA_ELEMENT_ITEM_DATA_RES</Name>
+			<OPCode>0x4357</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afbfidi">BT_AVP_FID_BROWSE_FOLDER_ITEM_DATA_IND</Name>
+			<OPCode>0xC358</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>uidHigh</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>uidLow</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>folderType</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>isPlayable</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>charSet</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>itemLen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>item</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afbfidr">BT_AVP_FID_BROWSE_FOLDER_ITEM_DATA_RES</Name>
+			<OPCode>0x4358</OPCode>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afbfidci">BT_AVP_FID_BROWSE _FOLDER_ITEM_DATA_COMP_IND</Name>
+			<OPCode>0xC359</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afbfidcr">BT_AVP_FID_BROWSE _FOLDER_ITEM_DATA_COMP_RES</Name>
+			<OPCode>0x4359</OPCode>
+		</CMD>
+		<CMD type="CMD" group="AVP">
+			<Name alias="afbsr">BT_AVP_FID_BROWSE_SEARCH_REQ</Name>
+			<OPCode>0x35A</OPCode>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>str_length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>string</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="AVP">
+			<Name alias="afbsc">BT_AVP_FID_BROWSE_SEARCH_CFM</Name>
+			<OPCode>0x835A</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>device_id</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>uid_counter </Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>num_items</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBAPC">
+			<Name alias="pfari">BT_PBAPC_FID_AUTH_REQUEST_IND</Name>
+			<OPCode>0xC408</OPCode>
+			<Param>
+				<Name>options</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBAPC">
+			<Name alias="pfarr">BT_PBAPC_FID_AUTH_REQUEST_RES</Name>
+			<OPCode>0x4408</OPCode>
+			<Param>
+				<Name>userid_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>userid</Name>
+				<Type>buff</Type>
+			</Param>
+			<Param>
+				<Name>password_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>password</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBAPC">
+			<Name alias="pfsfr">BT_PBAPC_FID_SET_FOLDER_REQ</Name>
+			<OPCode>0x401</OPCode>
+			<Param>
+				<Name>repository</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>phonebook</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBAPC">
+			<Name alias="pfsfc">BT_PBAPC_FID_SET_FOLDER_CFM</Name>
+			<OPCode>0x8401</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBAPC">
+			<Name alias="pfgpr">BT_PBAPC_FID_GET_PBSIZE_REQ</Name>
+			<OPCode>0x405</OPCode>
+			<Param>
+				<Name>repository</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>phonebook</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBAPC">
+			<Name alias="pfgpc">BT_PBAPC_FID_GET_PBSIZE_CFM</Name>
+			<OPCode>0x8405</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>pbookSize</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>newMissCalls</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBAPC">
+			<Name alias="pfppr">BT_PBAPC_FID_PULL_PHONEBOOK_REQ</Name>
+			<OPCode>0x400</OPCode>
+			<Param>
+				<Name>repository</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>phonebook</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>ver</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>filter_lo</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>filter_hi</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>start_list</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>max_list</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBAPC">
+			<Name alias="pfppc">BT_PBAPC_FID_PULL_PHONEBOOK_CFM</Name>
+			<OPCode>0x8400</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBAPC">
+			<Name alias="pfbvlr">BT_PBAPC_FID_BROWSE_VCARD_LIST_REQ</Name>
+			<OPCode>0x402</OPCode>
+			<Param>
+				<Name>order</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>srchAttr</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>srchValLen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>SearchValue</Name>
+				<Type>buff</Type>
+			</Param>
+			<Param>
+				<Name>start_list</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>max_list</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBAPC">
+			<Name alias="pfbvlc">BT_PBAPC_FID_BROWSE_VCARD_LIST_CFM</Name>
+			<OPCode>0x8402</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBAPC">
+			<Name alias="pfpevr">BT_PBAPC_FID_PULL_ENTRY_VCARD_REQ</Name>
+			<OPCode>0x403</OPCode>
+			<Param>
+				<Name>entry</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>filter_lo</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>filter_hi</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>ver</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBAPC">
+			<Name alias="pfpevc">BT_PBAPC_FID_PULL_ENTRY_VCARD_CFM</Name>
+			<OPCode>0x8403</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBAPC">
+			<Name alias="pfpdi">BT_PBAPC_FID_PHONEBOOK_DATA_IND</Name>
+			<OPCode>0xC406</OPCode>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>body</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBAPC">
+			<Name alias="pfpdr">BT_PBAPC_FID_PHONEBOOK_DATA_RES</Name>
+			<OPCode>0x4406</OPCode>
+		</CMD>
+		<CMD type="EVT" group="PBAPC">
+			<Name alias="pfpdci">BT_PBAPC_FID_PHONEBOOK_DATA _COMPLETE_IND</Name>
+			<OPCode>0xC407</OPCode>
+			<Param>
+				<Name>Status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBAPC">
+			<Name alias="pfpdcr">BT_PBAPC_FID_PHONEBOOK_DATA_COMPLETE_RES</Name>
+			<OPCode>0x4407</OPCode>
+		</CMD>
+		<CMD type="CMD" group="PBAPC">
+			<Name alias="pfpar">BT_PBAPC_FID_PULL_ABORT_REQ</Name>
+			<OPCode>0x404</OPCode>
+		</CMD>
+		<CMD type="EVT" group="PBAPC">
+			<Name alias="pfpac">BT_PBAPC_FID_PULL_ABORT_CFM</Name>
+			<OPCode>0x8404</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="OPP">
+			<Name alias="ofni">BT_OPP_FID_NAME_IND</Name>
+			<OPCode>0xC500</OPCode>
+			<Param>
+				<Name>name_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="OPP">
+			<Name alias="ofnr">BT_OPP_FID_NAME_RES</Name>
+			<OPCode>0x4500</OPCode>
+			<Param>
+				<Name>accept</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="OPP">
+			<Name alias="oftali">BT_OPP_FID_TYPE_AND_LEN_IND</Name>
+			<OPCode>0xC501</OPCode>
+			<Param>
+				<Name>Type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>Length</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="OPP">
+			<Name alias="oftalr">BT_OPP_FID_TYPE_AND_LEN_RES</Name>
+			<OPCode>0x4501</OPCode>
+		</CMD>
+		<CMD type="EVT" group="OPP">
+			<Name alias="ofodi">BT_OPP_FID_OBJ_DATA_IND</Name>
+			<OPCode>0xC502</OPCode>
+			<Param>
+				<Name>Body_length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>Body Data</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="OPP">
+			<Name alias="ofodr">BT_OPP_FID_OBJ_DATA_RES</Name>
+			<OPCode>0x4502</OPCode>
+		</CMD>
+		<CMD type="EVT" group="OPP">
+			<Name alias="ofvdi">BT_OPP_FID_VCARD_DATA_IND</Name>
+			<OPCode>0xC503</OPCode>
+			<Param>
+				<Name>data_length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>Data</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="OPP">
+			<Name alias="ofvdr">BT_OPP_FID_VCARD_DATA_RES</Name>
+			<OPCode>0x4503</OPCode>
+		</CMD>
+		<CMD type="EVT" group="OPP">
+			<Name alias="ofdci">BT_OPP_FID_DATA_COMPLETE_IND</Name>
+			<OPCode>0xC504</OPCode>
+			<Param>
+				<Name>Complete status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="OPP">
+			<Name alias="ofdcr">BT_OPP_FID_DATA_COMPLETE_RES</Name>
+			<OPCode>0x4504</OPCode>
+		</CMD>
+		<CMD type="CMD" group="OPP">
+			<Name alias="ofopar">BT_OPP_FID_OBJ_PUSH_ABORT_REQ</Name>
+			<OPCode>0x505</OPCode>
+		</CMD>
+		<CMD type="EVT" group="OPP">
+			<Name alias="ofopac">BT_OPP_FID_OBJ_PUSH_ABORT_CFM</Name>
+			<OPCode>0x8505</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SYNCML">
+			<Name alias="spdr">BT_SYNCML_PHONEBOOK_DOWNLOAD_REQ</Name>
+			<OPCode>0x600</OPCode>
+		</CMD>
+		<CMD type="EVT" group="SYNCML">
+			<Name alias="spdc">BT_SYNCML_PHONEBOOK_DOWNLOAD_CFM</Name>
+			<OPCode>0x8600</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="SYNCML">
+			<Name alias="svdsi">BT_SYNCML_VCARD_DATA_SEND_IND</Name>
+			<OPCode>0xC601</OPCode>
+			<Param>
+				<Name>vcard_length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>vcard</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SYNCML">
+			<Name alias="svdsr">BT_SYNCML_VCARD_DATA_SEND_RES</Name>
+			<OPCode>0x4601</OPCode>
+		</CMD>
+		<CMD type="EVT" group="SYNCML">
+			<Name alias="svci">BT_SYNCML_VCARD_COMPLETE_IND</Name>
+			<OPCode>0xC602</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="SYNCML">
+			<Name alias="svcr">BT_SYNCML_VCARD_COMPLETE_RES</Name>
+			<OPCode>0x4602</OPCode>
+		</CMD>
+		<CMD type="CMD" group="SYNCML">
+			<Name alias="sdar">BT_SYNCML_DOWNLOAD_ABORT_REQ</Name>
+			<OPCode>0x603</OPCode>
+		</CMD>
+		<CMD type="EVT" group="SYNCML">
+			<Name alias="sdac">BT_SYNCML_DOWNLOAD_ABORT_CFM</Name>
+			<OPCode>0x8603</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfmci">BT_MAP_FID_MNS_CONNECT_IND</Name>
+			<OPCode>0xC800</OPCode>
+			<Param>
+				<Name>Status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfmcr">BT_MAP_FID_MNS_CONNECT_RES</Name>
+			<OPCode>0x4800</OPCode>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfmdi">BT_MAP_FID_MNS_DISCONNECT_IND</Name>
+			<OPCode>0xC801</OPCode>
+			<Param>
+				<Name>Status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfmdr">BT_MAP_FID_MNS_DISCONNECT_RES</Name>
+			<OPCode>0x4801</OPCode>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfsnr">BT_MAP_FID_SET_NOTIFY_REQ</Name>
+			<OPCode>0x800</OPCode>
+			<Param>
+				<Name>InstanceId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfsnc">BT_MAP_FID_SET_NOTIFY_CFM</Name>
+			<OPCode>0x8800</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mferi">BT_MAP_FID_EVENT_REPORT_IND</Name>
+			<OPCode>0xC802</OPCode>
+			<Param>
+				<Name>instanceId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>msgtype</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>handle</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mferr">BT_MAP_FID_EVENT_REPORT_RES</Name>
+			<OPCode>0x4802</OPCode>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfsfr">BT_MAP_FID_SET_FLODER_REQ</Name>
+			<OPCode>0x801</OPCode>
+			<Param>
+				<Name>InstanceId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>back</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>length</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfsfc">BT_MAP_FID_SET_FLODER_CFM</Name>
+			<OPCode>0x8801</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfgfr">BT_MAP_FID_GET_FLODERLIST_REQ</Name>
+			<OPCode>0x802</OPCode>
+			<Param>
+				<Name>InstanceId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>maxcount</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>offset</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfgfc">BT_MAP_FID_GET_FLODERLIST_CFM</Name>
+			<OPCode>0x8802</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfgfi">BT_MAP_FID_GET_FLODERLIST_IND</Name>
+			<OPCode>0xC803</OPCode>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfgfr1">BT_MAP_FID_GET_FLODERLIST_RES</Name>
+			<OPCode>0x4803</OPCode>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mffci">BT_MAP_FID_FLODERLIST_COMPLETE_IND</Name>
+			<OPCode>0xC806</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mffcr">BT_MAP_FID_FLODERLIST_COMPLETE_RES</Name>
+			<OPCode>0x4806</OPCode>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfgmr">BT_MAP_FID_GET_MESSAGELIST_REQ</Name>
+			<OPCode>0x803</OPCode>
+			<Param>
+				<Name>InstanceId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>maxcount</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>offset</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>filter</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfgmc">BT_MAP_FID_GET_MESSAGELIST_CFM</Name>
+			<OPCode>0x8803</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfgmi">BT_MAP_FID_GET_MESSAGELIST_IND</Name>
+			<OPCode>0xC804</OPCode>
+			<Param>
+				<Name>handle</Name>
+				<Type>u32</Type>
+			</Param>
+			<Param>
+				<Name>datetime_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>datetime</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>sender_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>sender</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>read</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfgmr1">BT_MAP_FID_GET_MESSAGELIST_RES</Name>
+			<OPCode>0x4804</OPCode>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfmci1">BT_MAP_FID_MESSAGELIST_COMPLETE_IND</Name>
+			<OPCode>0xC807</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfmcr1">BT_MAP_FID_MESSAGELIST_COMPLETE_RES</Name>
+			<OPCode>0x4807</OPCode>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfgmr2">BT_MAP_FID_GET_MESSAGE_REQ</Name>
+			<OPCode>0x804</OPCode>
+			<Param>
+				<Name>instanceId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>handle</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfgmc1">BT_MAP_FID_GET_MESSAGE_CFM</Name>
+			<OPCode>0x8804</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfgmi1">BT_MAP_FID_GET_MESSAGE_IND</Name>
+			<OPCode>0xC805</OPCode>
+			<Param>
+				<Name>len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>content</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfgmr3">BT_MAP_FID_GET_MESSAGE_RES</Name>
+			<OPCode>0x4805</OPCode>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfmci2">BT_MAP_FID_MESSAGE_COMPLETE_IND</Name>
+			<OPCode>0xC808</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfmcr2">BT_MAP_FID_MESSAGE_COMPLETE_RES</Name>
+			<OPCode>0x4808</OPCode>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfsmsr">BT_MAP_FID_SET_MESSAGE_STATUS_REQ</Name>
+			<OPCode>0x805</OPCode>
+			<Param>
+				<Name>instanceId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>handle</Name>
+				<Type>u32</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfsmsc">BT_MAP_FID_SET_MESSAGE_STATUS_CFM</Name>
+			<OPCode>0x8805</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfpmr">BT_MAP_FID_PUT_MESSAGE_REQ</Name>
+			<OPCode>0x806</OPCode>
+			<Param>
+				<Name>instanceId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>receiverLen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>receiver</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>totalLen</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfpmc">BT_MAP_FID_PUT_MESSAGE_CFM</Name>
+			<OPCode>0x8806</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfpmbi">BT_MAP_FID_PUT_MESSAGE_BODY_IND</Name>
+			<OPCode>0xC809</OPCode>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfpmbr">BT_MAP_FID_PUT_MESSAGE_BODY_RES</Name>
+			<OPCode>0x4809</OPCode>
+			<Param>
+				<Name>abort</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>length</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>data</Name>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfpmbci">BT_MAP_FID_PUT_MESSAGE_BODY_COMPLETE_IND</Name>
+			<OPCode>0xC810</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfpmbcr">BT_MAP_FID_PUT_MESSAGE_BODY_COMPLETE_RES</Name>
+			<OPCode>0x4810</OPCode>
+		</CMD>
+		<CMD type="CMD" group="MAP">
+			<Name alias="mfuir">BT_MAP_FID_UPDATE_INBOX_REQ</Name>
+			<OPCode>0x807</OPCode>
+			<Param>
+				<Name>instanceId</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="MAP">
+			<Name alias="mfuic">BT_MAP_FID_UPDATE_INBOX_CFM</Name>
+			<OPCode>0x8807</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBDL">
+			<Name alias="pfcr">BT_PBDL_FID_CONFIGURE_REQ</Name>
+			<OPCode>0x701</OPCode>
+			<Param>
+				<Name>srv_ priority</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>register_srv</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>vcard_type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>charset_type</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBDL">
+			<Name alias="pfcc">BT_PBDL_FID_CONFIGURE_CFM</Name>
+			<OPCode>0x8701</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBDL">
+			<Name alias="pfspr">BT_PBDL_FID_SYNC_PB_REQ</Name>
+			<OPCode>0x702</OPCode>
+			<Param>
+				<Name>devId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>pbType</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBDL">
+			<Name alias="pfspc">BT_PBDL_FID_SYNC_PB_CFM</Name>
+			<OPCode>0x8702</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBDL">
+			<Name alias="pfsei">BT_PBDL_FID_SYNC_EVENT_IND</Name>
+			<OPCode>0xC701</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>pbType</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBDL">
+			<Name alias="pfser">BT_PBDL_FID_SYNC_EVENT_RES</Name>
+			<OPCode>0x4701</OPCode>
+		</CMD>
+		<CMD type="EVT" group="PBDL">
+			<Name alias="pfspdi">BT_PBDL_FID_SYNC_PB_DATA_IND</Name>
+			<OPCode>0xC702</OPCode>
+			<Param>
+				<Name>index</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>number_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>number</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>name_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBDL">
+			<Name alias="pfspdr">BT_PBDL_FID_SYNC_PB_DATA_RES</Name>
+			<OPCode>0x4702</OPCode>
+		</CMD>
+		<CMD type="EVT" group="PBDL">
+			<Name alias="pfspci">BT_PBDL_FID_SYNC_PB_COMPLETE_IND</Name>
+			<OPCode>0xC703</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBDL">
+			<Name alias="pfspcr">BT_PBDL_FID_SYNC_PB_COMPLETE_RES</Name>
+			<OPCode>0x4703</OPCode>
+		</CMD>
+		<CMD type="CMD" group="PBDL">
+			<Name alias="pfsar">BT_PBDL_FID_SYNC_ABORT_REQ</Name>
+			<OPCode>0x703</OPCode>
+		</CMD>
+		<CMD type="EVT" group="PBDL">
+			<Name alias="pfsac">BT_PBDL_FID_SYNC_ABORT_CFM</Name>
+			<OPCode>0x8703</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBDL">
+			<Name alias="pfgpar">BT_PBDL_FID_GET_PB_AMOUNT_REQ</Name>
+			<OPCode>0x704</OPCode>
+			<Param>
+				<Name>devId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>pbType</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBDL">
+			<Name alias="pfgpac">BT_PBDL_FID_GET_PB_AMOUNT_CFM</Name>
+			<OPCode>0x8704</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>pbType</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>amount</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBDL">
+			<Name alias="pfgpbir">BT_PBDL_FID_GET_PB_BY_INDEX_REQ</Name>
+			<OPCode>0x705</OPCode>
+			<Param>
+				<Name>devId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>index</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBDL">
+			<Name alias="pf pbic">BT_PBDL_FID_ GET _PB_BY_INDEX_CFM</Name>
+			<OPCode>0x8705</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>index</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>pbType</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>amount</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBDL">
+			<Name alias="pfgpnbir">BT_PBDL_FID_GET_PB_NUMBER_BY_INDEX_REQ</Name>
+			<OPCode>0x706</OPCode>
+			<Param>
+				<Name>devId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>index</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBDL">
+			<Name alias="pfgpnbic">BT_PBDL_FID_GET_PB_NUMBER_BY_INDEX_CFM</Name>
+			<OPCode>0x8706</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>number_type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>number_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>number</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBDL">
+			<Name alias="pfgphbir">BT_PBDL_FID_GET_PB_HISTORY_BY_INDEX_REQ</Name>
+			<OPCode>0x708</OPCode>
+			<Param>
+				<Name>devId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>pbType</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>index</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBDL">
+			<Name alias="pfgphbic">BT_PBDL_FID_GET_PB_HISTORY_BY_INDEX_CFM</Name>
+			<OPCode>0x8708</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>index</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>pbType</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>number_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>number</Name>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>name_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBDL">
+			<Name alias="pfspbnr">BT_PBDL_FID_SEARCH_PB_BY_NUMBER_REQ</Name>
+			<OPCode>0x709</OPCode>
+			<Param>
+				<Name>devId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>numberLen</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>number</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBDL">
+			<Name alias="pfspbnc">BT_PBDL_FID_SEARCH_PB_BY_NUMBER_CFM</Name>
+			<OPCode>0x8709</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>type</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>name_len</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>name</Name>
+				<Type>str</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBDL">
+			<Name alias="pfspbkr">BT_PBDL_FID_SEARCH_PB_BY_KEY_REQ</Name>
+			<OPCode>0x70A</OPCode>
+			<Param>
+				<Name>devId</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>key</Name>
+				<Type>u24</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBDL">
+			<Name alias="pfspbkc">BT_PBDL_FID_SEARCH_PB_BY_KEY_CFM</Name>
+			<OPCode>0x870A</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>position</Name>
+				<Type>u16</Type>
+			</Param>
+			<Param>
+				<Name>amount</Name>
+				<Type>u16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBDL">
+			<Name alias="pfipr">BT_PBDL_FID_INVERT_PB_REQ</Name>
+			<OPCode>0x70B</OPCode>
+			<Param>
+				<Name>devId</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBDL">
+			<Name alias="pfipc">BT_PBDL_FID_INVERT_PB_CFM</Name>
+			<OPCode>0x870B</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="PBDL">
+			<Name alias="pfgisr">BT_PBDL_FID_GET_INVERT_STATUS_REQ</Name>
+			<OPCode>0x70C</OPCode>
+			<Param>
+				<Name>devId</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="PBDL">
+			<Name alias="pfgisc">BT_PBDL_FID_GET_INVERT_STATUS_CFM</Name>
+			<OPCode>0x870C</OPCode>
+			<Param>
+				<Name>status</Name>
+				<Type>u8</Type>
+			</Param>
+			<Param>
+				<Name>sort</Name>
+				<Type>u8</Type>
+			</Param>
+		</CMD>
+	</CmdList>
+</Device>

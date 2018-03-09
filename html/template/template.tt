@@ -1,0 +1,95 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>My Pet Monkeys</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+table
+{
+	border-collapse:collapse;
+}
+td.dark
+{
+	border:1px solid black;
+	height:25px;
+	background-color:#D9D9D9;
+}
+td.white
+{
+	border:1px solid black;
+	height:25px;
+  	color:black;
+}
+
+
+</style>
+
+</head>
+<body>
+[% FOREACH key IN items.keys.sort %]
+<br/>
+<br/>
+<br/>
+<table align="center">
+ <tr>
+  <td width=102 class="white">Name:</td>
+  <td width=421 colspan=5  class="white">[%key%]</td>
+ </tr>
+ <tr>
+	<td width=92 class="dark">flag:</td>
+  	<td width=82 class="white">0x00</td>
+  	<td width=92 class="dark">gid:</td>
+  	<td width=82 class="white">0x00</td>
+	<td width=93 class="dark">fid:</td>
+  	<td width=82 class="white">0x00</td>
+ </tr>
+ <tr>
+  <td width=523 colspan=6  class="dark">functionality:</td>
+ </tr>
+ <tr>
+  <td width=523 colspan=6   class="white"></td>
+ </tr>
+ [% IF items.$key != 0 %]
+ [% SET count = 1 %]
+ [% FOREACH p IN items.$key.keys %]
+ <tr>
+  <td width=523 colspan=6  class="dark">param [% count %]:</td>
+ </tr>
+ <tr>
+  <td width=103  class="dark">type:</td>
+  <td width=82  class="white">[% items.$key.$p %]</td>
+  <td width=103  class="dark">name:</td>
+  <td width=235 colspan=3  class="white">[% p %]</td>
+ </tr>
+ <tr>
+  <td width=103  class="dark">meanings:</td>
+  <td width=420 colspan=5  class="white"></td>
+ </tr>
+ <tr >
+  <td width=103  class="dark">ranage:</td>
+  <td width=420 colspan=5 class="white"></td>
+ </tr>
+ <tr >
+  <td width=523 colspan=6 class="white">
+  [% IF items.$key.$p == 'status' %]
+ 	0x00 means no error, other values please refer to corresponding spec.
+  [% END %]
+  </td>
+ </tr>
+ [%count=count+1%]
+ [% END %]
+ [% END %]
+ <tr>
+  <td width=523 colspan=6 class="dark">remark:</td>
+ </tr>
+ <tr>
+  <td width=523 colspan=6 class="white"></td>
+ </tr>
+</table>
+<br/>
+<br/>
+<br/>
+
+[% END %]
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+./parseStruct.pl req ./data/req/*
+./parseStruct.pl cfm ./data/cfm/*
+
+#cp *.c ~/workspace/ngi/externals/synergy/bluetooth/bt/18.2.4/marvin_app/common/log/
+#mv *.c ~/workspace/Synergy_x86/bt/18.2.4/marvin/common/log/

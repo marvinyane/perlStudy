@@ -1,0 +1,62 @@
+<CmdList>
+  <CMD group="0x00" type="CMD">
+    <Name>BT_GEN_FID_RESET_REQ</Name>
+    <OPCode>0x01</OPCode>
+    <remark>There may be no corresponding CFM message, however host application should send the command to module until the message BT_GEN_FID_INIT_IND is received which means Bluetooth Module has been initialized successfully.</remark>
+  </CMD>
+  <CMD group="0x00" type="EVT">
+    <Name>BT_GEN_FID_RESET_CFM</Name>
+    <OPCode>0x01</OPCode>
+    <Param>
+      <Meaning>The Bluetooth chimarvin initiate status</Meaning>
+      <Name>status</Name>
+      <Range>0x00~0x0D
+Please refer the Appendix B: System Init Error Code</Range>
+      <Type>u8</Type>
+    </Param>
+    <functionality>The confirmation of the host reset command.</functionality>
+    <remark>N/A</remark>
+  </CMD>
+  <CMD group="0x40" type="EVT">
+    <Name>BT_GEN_FID_INIT_IND</Name>
+    <OPCode>0x4002</OPCode>
+    <Param>
+      <Meaning>The Bluetooth chimarvin initiate status</Meaning>
+      <Name>status</Name>
+      <Range>0x00~0x0D
+Please refer the Appendix B: System Init Error Code</Range>
+      <Type>u8</Type>
+    </Param>
+    <Param>
+      <Meaning>Local BT Module ID</Meaning>
+      <Name>code</Name>
+      <Type>u16</Type>
+    </Param>
+    <Param>
+      <Meaning>Software version</Meaning>
+      <Name>ver</Name>
+      <Type>u16</Type>
+    </Param>
+    <Param>
+      <Meaning>The Bluetooth device address</Meaning>
+      <Name>bd_addr</Name>
+      <Type>bdaddr</Type>
+    </Param>
+    <Param>
+      <Meaning>Bitwise supported services</Meaning>
+      <Name>supports</Name>
+      <Range>0x0000~0x01FF
+bit0: SPP          bit1: HFP_HF      bit2: A2DP_SINK      bit3: AVRCP_CT
+bit4: OPP_SERVER  bit5: PBAP_PCE     bit8: DI</Range>
+      <Type>u16</Type>
+    </Param>
+    <functionality>Indicate the Bluetooth chimarvin information and Bluetooth Module information. Generally speaking, this message is used to indicate that Bluetooth Module has been initialized successfully.</functionality>
+    <remark>N/A</remark>
+  </CMD>
+  <CMD group="0x40" type="CMD">
+    <Name>BT_GEN_FID_INIT_RES</Name>
+    <OPCode>0x4002</OPCode>
+    <functionality>This message is used to confirm the message BT_GEN_FID_INIT_IND has been received.</functionality>
+    <remark>N/A</remark>
+  </CMD>
+</CmdList>

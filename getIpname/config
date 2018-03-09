@@ -1,0 +1,17 @@
+
+Host goni
+Hostname 192.168.8.74
+IdentityFile ~/.ssh/id_rsa
+User yanjunzheng
+Port 29418
+
+Host iauto
+Hostname review.iauto.net
+IdentityFile ~/.ssh/id_rsa
+User yanjunzheng
+Port 29418
+
+Host igerrit.storm
+Hostname igerrit.storm
+IdentityFile ~/.ssh/id_rsa
+User yanjunzheng

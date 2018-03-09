@@ -1,0 +1,735 @@
+[btGen]: BtAppRegisterBthandlecbReq
+[btGen]: BtAppRegisterBthandlecbReq
+Open File Failed!!!
+[btGen]: BtAppRegisterBthandlecbReq
+[btGen]: BtAppRegisterBthandlecbReq
+[btGen]: BtAppRegisterBthandlecbReq
+[btGen]: BtAppPowerOnReq
+[btGen]: Local Device Address is 0000: 00: 000004 
+[btGen]: synergyBtThread
+[btGen]: Local Device Address is 0000: 00: 000004 
+[btGen]: BtPowerOnReq
+[btGen]: btAppSetStackState, Stack state is 1
+[btGen]: marvinBtTransportInit, The UART port is /dev/ttyUSB0
+[btBoot]: CsrBtBootstrapSetInterface
+[btGen]: CsrSchedTaskInit
+[btGen]: initBtDeviceReq
+[btBoot]: CsrBtBootstrapSetFriendlyName, The local device name is 
+[btBoot]: CsrBtBootstrapSetInterface
+[btBoot]: CsrBtBootstrapSetBitRate, The bitRate is 921600
+[btBoot]: CsrBtBootstrapSetFrequency, The crystal frequency is 6590
+[btCm]: btCmInit
+[btGen]: btCmRegisterHandle
+[btGen]: btGenSecModuleReset
+[btGen]: btGenInit
+[btGen]: btGenRegisterHandle
+[btHfp]: btPhoneInit
+[btHfp]: btPhoneRegisterHandle
+[btHfp]: BtStackHfpInit
+[btGen]: CsrSchedTaskInit
+[btGen]: initBtDeviceReq
+[btBoot]: CsrBtBootstrapSetFriendlyName, The local device name is PSET_NGI_BT
+[btBoot]: CsrBtBootstrapSetInterface
+[btBoot]: CsrBtBootstrapSetBitRate, The bitRate is 921600
+[btBoot]: CsrBtBootstrapSetFrequency, The crystal frequency is 6590
+[btCm]: btCmInit
+[btGen]: btCmRegisterHandle
+[btGen]: btGenSecModuleReset
+[btGen]: The Condifure Block has been inited
+[btGen]: btGenInit
+[btGen]: btGenRegisterHandle
+[btHfp]: btPhoneInit
+[btHfp]: btPhoneRegisterHandle
+[btHfp]: BtStackHfpInit
+[btCm]: btConmCmdHandlerInit
+[btGen]: btGenCmdHandlerInit
+[btGen]: btGenEvtHandlerInit
+[btGen]: btStackGenHandlerInit
+[btHfp]: btPhoneCmdHandlerInit
+[btHfp]: btPhoneEvtHandlerInit
+[btHfp]: btStackHfpHandlerInit
+[btMsg]: BtStackMapcAppInit
+[btHid]: BtStackHiddActivateReqSend
+[btGen]: btAppSetStackState, Stack state is 2
+[btGen]: btGenWriteDefaultpageTimeoutReq
+[APP]: BT_GEN_READ_SC_RECORD_BYINDEX_IND ret=0xb36ff0ef[] index=0x00 record=0xb2d03620[] 
+[btAvp]: CSR_BT_AV_REGISTER_STREAM_HANDLE_CFM
+[btBoot]: CsrTmBlueCoreGetBootstrap, The device build id is  2031
+[btBoot]: CsrBtBootstrapSpecific, The device build id is  2031
+[btBoot]: CsrBtBootstrapParsePsrConstant
+[btBoot]: CsrBtBootstrapParsePsrConstant
+[csr_bt_spp_main.c:547] General Exception: Task=SPP, State=0x0, PrimType=0x8000, [Unknown AM prim or no callback active]
+[csr_bt_spp_main.c:547] General Exception: Task=SPP, State=0x0, PrimType=0x8000, [Unknown AM prim or no callback active]
+[csr_bt_spp_main.c:547] General Exception: Task=SPP, State=0x0, PrimType=0x8000, [Unknown AM prim or no callback active]
+[csr_bt_spp_main.c:547] General Exception: Task=SPP, State=0x0, PrimType=0x8000, [Unknown AM prim or no callback active]
+[btSpp]: CSR_BT_SPP_GET_INSTANCES_QID_CFM 
+[btSpp]: BtStackSppGetInstanceQidCfm phandlesList 0 = 32 
+[btSpp]: BtStackSppGetInstanceQidCfm phandlesList 1 = 33 
+[btSpp]: BtStackSppGetInstanceQidCfm phandlesList 2 = 34 
+[btSpp]: BtStackSppGetInstanceQidCfm phandlesList 3 = 35 
+[btSpp]: BtStackSppGetInstanceQidCfm phandlesList 4 = 36 
+[btAvp]: CSR_BT_AV_ACTIVATE_CFM Success 
+[btAvp]: CSR_BT_AV_ACTIVATE_CFM Success 
+[btAvp]: CSR_BT_AVRCP_CONFIG_CFM SUCCESS
+[btAvp]: CSR_BT_AVRCP_ACTIVATE_CFM [Success] 
+enter CsrBtHiddActivateIdleHandler pos 1 
+enter CsrBtHiddActivateIdleHandler pos 3 
+enter CsrBtHiddActivateIdleHandler pos 5 
+enter CsrBtHiddActivateIdleHandler pos 6 
+[btGen]: CSR_BT_CM_WRITE_PAGE_TO_CFM Result = 0x0000
+[btGen]: btGenWriteDefaultpageTimeoutCfm
+[btGen]: btGenReadScanModeReq
+[btGen]: CSR_BT_CM_READ_SCAN_ENABLE_CFM 
+[btGen]: btCmSetScEventMaskReq
+[btGen]: btAppSetStackState, Stack state is 3
+[btGen]: btCmScConfigReq
+[APP]: BT_GEN_POWER_ON_CFM version=0xA001 status=0x00 supportservice=0x0000 
+[btHid]: CSR_BT_HIDD_ACTIVATE_CFM 
+[btHid]: Hidd Activate OK!
+[btHid]: HIDD_STACK_ACTIVATE_CFM
+[APP]: BT_HID_CONNECT_CFM status=0x00 
+[btHfp]: CSR_BT_HF_ACTIVATE_CFM
+[APP]: BT_GEN_SEARCH_REOMTE_DEV_REQ count=0x14 timer=0x3C 
+[btGen]: btGenCmdHandler
+[btGen]: BT_GEN_SEARCH_REOMTE_DEV_REQ
+[btGen]: CSR_BT_SD_SEARCH_CONFIG_CFM
+[btGen]: ind type = 800D, status = 0000
+[APP]: BT_GEN_SEARCH_REOMTE_DEV_CFM status=0x00 
+[btGen]: CSR_BT_SD_SEARCH_RESULT_IND
+[btGen]: Remote device Support Service Count as 0 
+[btGen]: Device Address: 0x5C3C:27:6FF470 Name:Galaxy S4-black 
+[APP]: BT_GEN_SEARCH_REOMTE_DEV_IND remote_addr=5C3C-27-6FF470 length=0x0F name=0xb2d04460[Galaxy S4-black] service=0x00 cod=0x5A020C 
+[btGen]: CSR_BT_SD_SEARCH_RESULT_IND
+[btGen]: Remote device Support Service Count as 0 
+[btGen]: Device Address: 0x0C37:DC:E9852A Name:HUAWEI U8950D 
+[APP]: BT_GEN_SEARCH_REOMTE_DEV_IND remote_addr=0C37-DC-E9852A length=0x0D name=0xb2d04248[HUAWEI U8950D] service=0x00 cod=0x5A020C 
+[btGen]: CSR_BT_SD_SEARCH_RESULT_IND
+[btGen]: Remote device Support Service Count as 0 
+[btGen]: Device Address: 0xA06C:EC:C0FA86 Name:BlackBerry 9810 
+[APP]: BT_GEN_SEARCH_REOMTE_DEV_IND remote_addr=A06C-EC-C0FA86 length=0x0F name=0xb2d04a30[BlackBerry 9810] service=0x00 cod=0x78020C 
+[APP]: BT_CM_PAIRING_REMOTE_DEV_REQ remAddr=A06C-EC-C0FA86 
+[btCm]: BT_CM_PAIRING_REMOTE_DEV_REQ
+[btGen]: btCmPairingRemDevReq
+[btGen]: addPairingDevice
+[APP]: BT_CM_PAIRING_REMOTE_DEV_CFM status=0x00 
+[btGen]: CSR_BT_SD_CLOSE_SEARCH_IND
+[btGen]: ind type = 8002 Error Code =000C 
+[APP]: BT_GEN_SEARCH_REOMTE_DEV_COMP_IND status=0x04 
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff06f[] record=0xb2d045d0[�] addr=A06C-EC-C0FA86 
+Open File failed!!
+Seek end 0xA06C:EC:C0FA86 [pos:-1,match: 1]
+Found position error!!!
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff0df[] record=0xb2d045d0[�] addr=A06C-EC-C0FA86 
+Open File failed!!
+Seek end 0xA06C:EC:C0FA86 [pos:-1,match: 1]
+Found position error!!!
+[btGen]: Receive Mesasge Id as 8010
+[btGen]: CSR_BT_SC_SSP_PAIRING_IND
+[btGen]: btCmIncomingSspPairingInd authValid = 0, authRequirements = 6,localAuthRequirements =4 
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff0af[] record=0xb2d048d0в] addr=A06C-EC-C0FA86 
+Open File failed!!
+Seek end 0xA06C:EC:C0FA86 [pos:-1,match: 1]
+Found position error!!!
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff0df[] record=0xb2d048d0в] addr=A06C-EC-C0FA86 
+Open File failed!!
+Seek end 0xA06C:EC:C0FA86 [pos:-1,match: 1]
+Found position error!!!
+[btGen]: Receive Mesasge Id as 800D
+[btGen]: CSR_BT_SC_SSP_COMPARE_IND
+[btGen]: btCmSspNumericCompInd
+[btGen]: addPairingDevice
+[btGen]: btCmSspNumericCompInd, BlackBerry 9810, number = 237706
+[APP]: BT_CM_NUMERIC_CONFIRM_IND length=0x0F name=0xb2d04a30[BlackBerry 9810] numeric=0x3A08A addr=A06C-EC-C0FA86 
+[APP]: BT_CM_NUMERIC_CONFIRM_RES accept=0x1 remAddr=A06C-EC-C0FA86 
+[btCm]: BT_CM_NUMERIC_CONFIRM_RES
+[btGen]: btCmSspNumericCompRes
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36fefff[] record=0xb2d0cd88[�] addr=A06C-EC-C0FA86 
+Open File failed!!
+Seek end 0xA06C:EC:C0FA86 [pos:-1,match: 1]
+Found position error!!!
+[APP]: BT_GEN_WRITE_SC_RECORD_IND record=0xb2d0cd88[���] addr=A06C-EC-C0FA86 
+Open File failed!!
+Seek end 0xA06C:EC:C0FA86 [pos:0,match: 0]
+[btGen]: Receive Mesasge Id as 8001
+[btGen]: CSR_BT_SC_BOND_CFM
+[btGen]: btCmPairingCompleteInd 0 21 
+[btGen]: delPairingDevice
+[APP]: BT_CM_PAIRING_COMPLETE_IND status=0x00 addr=A06C-EC-C0FA86 
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff11f[] record=0xb2d11748[@] addr=A06C-EC-C0FA86 
+Pos Found 0xA06C:EC:C0FA86 [pos:0,match: 1]
+[APP]: BT_GEN_WRITE_SC_RECORD_IND record=0xb2d11748[���] addr=A06C-EC-C0FA86 
+Pos Found 0xA06C:EC:C0FA86 [pos:0,match: 0]
+[APP]: BT_CM_SERVICE_CON_REQ function=0x02 remAddr=A06C-EC-C0FA86 
+[btCm]: BT_CM_SERVICE_CON_REQ
+[btCm]: btCmFuncConReq The BdAddress is 0xA06C-EC-C0FA86, The connect function is 0002
+[btCm]: btCmGetConState The connection state is 0
+[btCm]: btCmGetConnectedFuction , 0xA06C-EC-C0FA86 connected_func=0 
+[APP]: BT_CM_SERVICE_CON_CFM status=0x00 
+[btCm]: btCmSetConState Set the connection state as 1
+[btCm]: btCmSetConFuction  The connection function is 0002
+[btCm]: btCmFuncConnectOut The BdAddress is 0xA06C-EC-C0FA86
+[btCm]: btCmGetLeftConFuction  The left connection function is 0002
+[btCm]: btCmGetNextConFunc  i =   0000, last function is 0000 
+[btCm]: isthisFunctionCanbeSetup: The function is 0002
+[btCm]: btCmSetConState Set the connection state as 1
+[btHfp]: btPhoneFuncConReq, Connect Address = 0xA06C-EC-C0FA86
+[btHfp]: isHfpHaveIdleLnk: Address = 0xA06C-EC-C0FA86
+[btHfp]: btStackHfpServiceConReq: Address = 0xA06C-EC-C0FA86
+[btHfp]: Link priority 1
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff14f[] record=0xb2d11f50[L] addr=A06C-EC-C0FA86 
+Pos Found 0xA06C:EC:C0FA86 [pos:0,match: 1]
+[btHfp]: CSR_BT_HF_SERVICE_CONNECT_CFM
+[btHfp]: btHfStackServiceConnectPrim result = 0x0000, the resultSupplier = 0x0010
+[btHfp]: btHfStackBrsfSend 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+BRSF:487\r\n
+###################### 34349 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: btHfStackListCindSend 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIND: ("service",(0-1)),("call",(0-1)),("callsetup",(0-3)),("battchg",(0-5)),("signal",(0-5)),("batterywarning",(0-1)),("chargerconnected",(0-1)),("callheld",(0-2)),("roam",(0-1))\r\n
+###################### 41478 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: btHfStackReadCindSend 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIND: 1,0,0,5,5,0,0,0,0\r\n
+###################### 26053 
+[btHfp]: hfpHandleCallIndication Call = 0
+[btHfp]: hfpHandleCallSetupIndication call_setup = 0
+[btHfp]: hfpHandleCallHeldIndication call_hold = 0
+[btHfp]: HFP_SERVICE_IND
+[APP]: BT_HFP_SERVICE_IND did=0x1 value=0x01 
+[btHfp]: HFP_SIGNAL_IND
+[APP]: BT_HFP_SIGNAL_IND did=0x1 value=0x05 
+[btHfp]: HFP_ROAM_IND
+[APP]: BT_HFP_ROAM_IND did=0x1 value=0x00 
+[btHfp]: HFP_BATTCHG_IND
+[APP]: BT_HFP_BATTCHG_IND did=0x1 value=0x05 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: btHfStackCmerSend 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: btHfStackChldSend 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CHLD: (0,1,1x,2,2x,3,4)\r\n
+###################### 38894 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: btHfStackClipSend 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: Link priority 1
+[btHfp]: HFP_SLC_CONNECT_IND
+[btHfp]: btPhoneConEvent, connection status is 0000
+] PP]: BT_HFP_AT_CMD_REQ len=0x0A priority=0x1 src=0x atCmd=0xb2d11b90[AT+CSCA?
+[btHfp]: btPhoneFuncConEvent,Status = 0000, Direction = 1,  Connect Address = 0xA06C-EC-C0FA86
+[btCm]: btCmFuncConResult  status = 0x0000, function =  0x0002, service =  0x0002, instance =  0001
+[APP]: BT_CM_SERVICE_CON_IND instanceId=0x1 function=0x02 status=0x00 extenParam=0x1E7 addr=A06C-EC-C0FA86 
+[btCm]: btCmAddConnectNote  
+[btCm]: btCmGetConnectedFuction , 0xA06C-EC-C0FA86 connected_func=2 
+[btCm]: btCmGetConState The connection state is 1
+[btCm]: btCmUpdateLeftFuncs  The left connection function is 0002,  FFFFFFFD
+[btCm]: btCmUpdateLeftFuncs  The left connection function is 0000,  FFFFFFFD
+[btCm]: btCmFuncConnectOut The BdAddress is 0xA06C-EC-C0FA86
+[btCm]: btCmGetLeftConFuction  The left connection function is 0000
+[btCm]: btCmSetConState Set the connection state as 0
+[btCm]: btCmGetConnectedFuction , 0xA06C-EC-C0FA86 connected_func=2 
+[APP]: BT_CM_SERVICE_CON_COMP_IND function=0x02 addr=A06C-EC-C0FA86 
+[btHfp]: BT_HFP_AT_CMD_REQ 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nERROR\r\n
+###################### 51019 
+[btHfp]: HFP_COMMON_CFM_MESSAGE 
+] PP]: BT_HFP_AT_CMD_REQ len=0x0B priority=0x1 src=0xA atCmd=0xb2d04900[AT+CPBS=?
+[btHfp]: BT_HFP_AT_CMD_REQ 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CPBS: ("ME","SM","DC","MC","RC")\r\n
+###################### 54510 
+[btPbdl]: ATCMD_PB_GET_STORAGE_IND
+[btPbdl]: ATCMD_PB_GET_STORAGE_IND prority=0,atType=0,storage=331
+[btPbdl]: Device id error!!!
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: HFP_COMMON_CFM_MESSAGE 
+[btPbdl]: ATCMD_PB_AT_INTERNEL_CFM did= 0,status=0 
+[btPbdl]: pbdlAtCmdCfm Error
+[btPbdl]: ATCMD_PB_CONNECTION_IND
+[btPbdl]: ATCMD_PB_CONNECTION_IND deviceId=0
+[btPbdl]: Atcmd Create State did=0
+[btPbdl]: First Create atcmd state, did =0
+[APP]: BT_PBDL_ATCMD_CONNECTION_IND did=0x addr=A06C-EC-C0FA86 
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff14f[] record=0xb2d11f50[�] addr=A06C-EC-C0FA86 
+Pos Found 0xA06C:EC:C0FA86 [pos:0,match: 1]
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff06f[] record=0xb2d12100[�] addr=A06C-EC-C0FA86 
+Pos Found 0xA06C:EC:C0FA86 [pos:0,match: 1]
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff0df[] record=0xb2d11f50[�] addr=A06C-EC-C0FA86 
+Pos Found 0xA06C:EC:C0FA86 [pos:0,match: 1]
+[btGen]: Receive Mesasge Id as 8015
+[btGen]: CSR_BT_SC_AUTHORISE_IND
+[btGen]: btCmAuthoriseInd  name = BlackBerry 9810, service id = 110D 
+[btAvp]: [btAvpIsConAccept] serviceId=110d 
+[btAvp]: [btAvpIsConAccept3]TRUE param=FALSE
+[APP]: BT_CM_CON_AUTHORISE_IND length=0x0F name=0xb2d113b8[BlackBerry 9810] service=0x04 addr=A06C-EC-C0FA86 
+[APP]: BT_CM_CON_AUTHORISE_RES accept=1 remAddr=A06C-EC-C0FA86 
+[btCm]: BT_CM_CON_AUTHORISE_RES
+[btAvp]: CSR_BT_AV_CONNECT_IND
+[btAvp]: [Log]BtStackA2dpConnectInd Start
+[btAvp]: a2dpIsActivated[1]
+[btAvp]: priority[0] inUse[0] state[1] connectionId[ff] streamHandle[ff] [btAvp]: btaddr[a06c-ec-c0fa86]
+[btAvp]: priority[1] inUse[0] state[0] connectionId[ff] streamHandle[ff] [btAvp]: btaddr[0-0-0]
+[btAvp]: filtersRun=0 priority = 0
+[btAvp]: [SBC DECODE] sbc_init start
+[btAvp]: [SBC DECODE] sbc_init end
+[btAvp]: [ALSA] alsa_init start
+[btAvp]: [ALSA] alsa filter initialized
+[btAvp]: [Log]BtStackA2dpConnectInd End
+[btAvp]: a2dpIsActivated[1]
+[btAvp]: priority[0] inUse[1] state[2] connectionId[0] streamHandle[ff] [btAvp]: btaddr[a06c-ec-c0fa86]
+[btAvp]: priority[1] inUse[0] state[0] connectionId[ff] streamHandle[ff] [btAvp]: btaddr[0-0-0]
+[btAvp]: A2DP ConnectInd DEVICE-ID = 0 resultCode=0 
+[btAvp]: [Log] BtA2dpConnectInd Start 
+[btAvp]: DeviceID = 1, Addr = a06c-ec-c0fa86 
+[btAvp]: connid = 2,adpstate = 2, rcpstate = 1 ,devstatus= 1 
+[btAvp]: DeviceID = 2, Addr = 0-0-0 
+[btAvp]: connid = 2,adpstate = 1, rcpstate = 1 ,devstatus= 0 
+[btAvp]: [A2DP] btAvpSetConnId buffer_id = 0, connid = 0 
+[btAvp]: [A2DP] appSetAdpState id = 0, oldstate = 2, newstate = 4 
+[btAvp]: btTimerSetEventId [1]
+[btAvp]: [AVRCP] btGetRcpState priority = 0, btGetRcpState state = 1 
+[btAvp]: [AVRCP] btAvrcpSetState id = 0, oldstate = 1, newstate = 2 
+[btAvp]: btTimerSetEventId [2]
+[btAvp]: btAvpStatusChg priority=0 devsts=1 adp=2,rcp=0
+[btAvp]: [Connecting]btAvpStatusChg Do Nothing!
+[btAvp]: [Log] BtA2dpConnectInd End 
+[btAvp]: DeviceID = 1, Addr = a06c-ec-c0fa86 
+[btAvp]: connid = 0,adpstate = 4, rcpstate = 2 ,devstatus= 1 
+[btAvp]: DeviceID = 2, Addr = 0-0-0 
+[btAvp]: connid = 2,adpstate = 1, rcpstate = 1 ,devstatus= 0 
+[btAvp]: CSR_BT_AV_DISCOVER_IND
+[btAvp]: CSR_BT_AV_GET_CAPABILITIES_IND
+[btAvp]: A2dp GetCapabilities ind->tLabel = 1 acpSeid = 2
+[btAvp]: [SBC DECODE] sbc_get_caps start 
+[btAvp]: [SBC DECODE] sbc_get_caps end
+[btAvp]: CSR_BT_AV_SET_CONFIGURATION_IND
+[btAvp]: [SBC DECODE] sbc_set_config start 
+[btAvp]: [SBC DECODE] sbc_stop 
+[btAvp]: [SBC DECODE] sbc_close 
+[btAvp]: [SBC DECODE] setPcmSettings channels=2,bits=16,freq=48000 
+[btAvp]: [SBC DECODE] sbc_open 
+[btAvp]: [SBC DECODE] sbc_set_config end 
+[btAvp]: [ACCEPT]BtStackA2dpSetConfigurationInd
+[btAvp]: filtersRun=2 priority = 0
+[btAvp]: [SBC DECODE] sbc_open 
+[btAvp]: [ALSA] alsa_open Start
+[btAvp]: [ALSA] inst->channels = 2,inst->sample_rate = 48000
+[btAvp]: [ALSA] pcm device default
+[btAvp]: [ALSA] pcm device opened, 0xb2d64908
+[btAvp]: [ALSA] pcm device params, 0xb2d12e18
+[btAvp]: [ALSA] snd_pcm_hw_params_get_period_size_max: val 349526, dir -1
+[btAvp]: [ALSA] snd_pcm_hw_params_get_period_size_min: val 32, dir 0
+[btAvp]: [ALSA] snd_pcm_hw_params_get_periods_max: val 1024, dir 0
+[btAvp]: [ALSA] snd_pcm_hw_params_get_periods_min: val 3, dir 0
+[btAvp]: [ALSA] snd_pcm_hw_params_get_buffer_size_max: 32768
+[btAvp]: [ALSA] snd_pcm_hw_params_get_buffer_size_min: 32768
+[btAvp]: [ALSA] alsa_open succeed
+[btAvp]: [ACCEPT]CsrBtAvSetConfigResAcpSend 
+[btAvp]: CSR_BT_AV_OPEN_IND
+[btAvp]: BtStackA2dpOpenInd->shandle = 0 tLabel = 3
+[btAvp]: [Log] BtA2dpOpenInd Start 
+[btAvp]: DeviceID = 1, Addr = a06c-ec-c0fa86 
+[btAvp]: connid = 0,adpstate = 4, rcpstate = 2 ,devstatus= 1 
+[btAvp]: DeviceID = 2, Addr = 0-0-0 
+[btAvp]: connid = 2,adpstate = 1, rcpstate = 1 ,devstatus= 0 
+[btAvp]: [AVRCP] btGetAdpState priority = 0, btGetAdpState state = 4 
+[btAvp]: comMessageTimerCancel [1]
+[btAvp]: comMessageTimerCancel [5] Success
+[btAvp]: [A2DP] appSetAdpState id = 0, oldstate = 4, newstate = 6 
+[btAvp]: [Log] BtA2dpOpenInd End 
+[btAvp]: DeviceID = 1, Addr = a06c-ec-c0fa86 
+[btAvp]: connid = 0,adpstate = 6, rcpstate = 2 ,devstatus= 1 
+[btAvp]: DeviceID = 2, Addr = 0-0-0 
+[btAvp]: connid = 2,adpstate = 1, rcpstate = 1 ,devstatus= 0 
+[btAvp]: CSR_BT_AV_STREAM_MTU_SIZE_IND
+[btAvp]: btAvpTimerEvtHandler id = 2 
+[btAvp]: TIMER_AVP_CONNECT_AVRCP 
+[btAvp]: [AVRCP] btGetRcpState priority = 0, btGetRcpState state = 2 
+[btAvp]: [AVRCP] btAvrcpSetState id = 0, oldstate = 2, newstate = 3 
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff14f[] record=0xb2d66ad0[L] addr=A06C-EC-C0FA86 
+Pos Found 0xA06C:EC:C0FA86 [pos:0,match: 1]
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff06f[] record=0xb2d66ad0[�] addr=A06C-EC-C0FA86 
+Pos Found 0xA06C:EC:C0FA86 [pos:0,match: 1]
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff0df[] record=0xb2d66d20[] addr=A06C-EC-C0FA86 
+Pos Found 0xA06C:EC:C0FA86 [pos:0,match: 1]
+[btGen]: Receive Mesasge Id as 8015
+[btGen]: CSR_BT_SC_AUTHORISE_IND
+[btGen]: btCmAuthoriseInd  name = BlackBerry 9810, service id = 110E 
+[btAvp]: [btAvpIsConAccept] serviceId=110e 
+[btAvp]: [AVRCP] btGetRcpState priority = 0, btGetRcpState state = 3 
+[btAvp]: [AVRCP] btGetAdpState priority = 0, btGetAdpState state = 6 
+[btAvp]: AdpState =adpConnected
+[btAvp]: CSR_BT_AVRCP_CONNECT_CFM
+[btAvp]: avrcp resSupplier = 11 , result = 8000 
+[btAvp]: BtStackAvrcpConnectCfm tgFeatures AVRCP Remote Control Target Version = 103,Feature = 1
+[btAvp]: [Log]BtStackAvrcpConnectCfm Start
+[btAvp]: avrcpIsActivated[1]
+[btAvp]: priority[0] inUse[0] state[1] connectionId[ff] [btAvp]: Addr[a06c-ec-c0fa86]
+[btAvp]: priority[1] inUse[0] state[0] connectionId[ff] [btAvp]: Addr[0-0-0]
+[btAvp]: [Log]BtStackAvrcpConnectCfm End
+[btAvp]: avrcpIsActivated[1]
+[btAvp]: priority[0] inUse[1] state[2] connectionId[0] [btAvp]: Addr[a06c-ec-c0fa86]
+[btAvp]: priority[1] inUse[0] state[0] connectionId[ff] [btAvp]: Addr[0-0-0]
+[btAvp]: [Log]BtStackAvrcpRemoteVersionIndSend Send Msg 
+[btAvp]: AVRCP DEVICE-ID = 0 ,Addr = a06c-ec-c0fa86 
+[btAvp]: [Log] BtAvrcpConnectInd Start 
+[btAvp]: DeviceID = 1, Addr = a06c-ec-c0fa86 
+[btAvp]: connid = 0,adpstate = 6, rcpstate = 3 ,devstatus= 1 
+[btAvp]: DeviceID = 2, Addr = 0-0-0 
+[btAvp]: connid = 2,adpstate = 1, rcpstate = 1 ,devstatus= 0 
+[btAvp]: [A2DP] btAvpSetConnId buffer_id = 0, connid = 0 
+[btAvp]: [AVRCP] btAvrcpSetState id = 0, oldstate = 3, newstate = 5 
+[btAvp]: btAvpStatusChg priority=0 devsts=1 adp=2,rcp=2
+[btAvp]: [Connect Event]btAvpFuncConEvent 0
+[btCm]: btCmFuncConResult  status = 0x0000, function =  0x0004, service =  0x0004, instance =  0001
+[APP]: BT_CM_SERVICE_CON_IND instanceId=0x1 function=0x04 status=0x00 extenParam=0x00 addr=A06C-EC-C0FA86 
+[btCm]: btCmAddConnectNote  
+[btCm]: btCmGetConnectedFuction , 0xA06C-EC-C0FA86 connected_func=6 
+[btCm]: btCmGetConState The connection state is 0
+[APP]: BT_AV_AVRCP_CONNECT_IND version=0x00 status=0x00 did=0x1 feature=0x00 addr=A06C-EC-C0FA86 
+[btAvp]: [Log] BtAvrcpConnectInd End 
+[btAvp]: DeviceID = 1, Addr = a06c-ec-c0fa86 
+[btAvp]: connid = 0,adpstate = 6, rcpstate = 5 ,devstatus= 2 
+[btAvp]: DeviceID = 2, Addr = 0-0-0 
+[btAvp]: connid = 2,adpstate = 1, rcpstate = 1 ,devstatus= 0 
+[btAvp]: AVRCP DEVICE-ID = 0 
+[APP]: BT_AV_AVRCP_REMOTE_VERSION_IND version=0x103 did=0x1 feature=0x01 
+[APP]: BT_CM_PAIRING_REMOTE_DEV_REQ remAddr=0C37-DC-E9852A 
+[btCm]: BT_CM_PAIRING_REMOTE_DEV_REQ
+[btGen]: btCmPairingRemDevReq
+[btGen]: addPairingDevice
+[APP]: BT_CM_PAIRING_REMOTE_DEV_CFM status=0x00 
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff06f[] record=0xb2d66ca0[(в(в] addr=0C37-DC-E9852A 
+Seek end 0x0C37:DC:E9852A [pos:-1,match: 1]
+Found position error!!!
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff0df[] record=0xb2d66a60[@] addr=0C37-DC-E9852A 
+Seek end 0x0C37:DC:E9852A [pos:-1,match: 1]
+Found position error!!!
+[btGen]: Receive Mesasge Id as 8010
+[btGen]: CSR_BT_SC_SSP_PAIRING_IND
+[btGen]: btCmIncomingSspPairingInd authValid = 0, authRequirements = 6,localAuthRequirements =4 
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff0af[] record=0xb2d66980[�в�в
+                                                                          ] addr=0C37-DC-E9852A 
+Seek end 0x0C37:DC:E9852A [pos:-1,match: 1]
+Found position error!!!
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff0df[] record=0xb2d669e0[@] addr=0C37-DC-E9852A 
+Seek end 0x0C37:DC:E9852A [pos:-1,match: 1]
+Found position error!!!
+[btGen]: Receive Mesasge Id as 800D
+[btGen]: CSR_BT_SC_SSP_COMPARE_IND
+[btGen]: btCmSspNumericCompInd
+[btGen]: addPairingDevice
+[btGen]: btCmSspNumericCompInd, HUAWEI U8950D, number = 678236
+[APP]: BT_CM_NUMERIC_CONFIRM_IND length=0x0D name=0xb2d11bf8[HUAWEI U8950D] numeric=0xA595C addr=0C37-DC-E9852A 
+[APP]: BT_CM_NUMERIC_CONFIRM_RES accept=0x1 remAddr=0C37-DC-E9852A 
+[btCm]: BT_CM_NUMERIC_CONFIRM_RES
+[btGen]: btCmSspNumericCompRes
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36fefff[] record=0xb2d66980[�] addr=0C37-DC-E9852A 
+Seek end 0x0C37:DC:E9852A [pos:-1,match: 1]
+Found position error!!!
+[APP]: BT_GEN_WRITE_SC_RECORD_IND record=0xb2d0cee8[*��] addr=0C37-DC-E9852A 
+Seek end 0x0C37:DC:E9852A [pos:1,match: 0]
+[btGen]: Receive Mesasge Id as 8001
+[btGen]: CSR_BT_SC_BOND_CFM
+[btGen]: btCmPairingCompleteInd 0 21 
+[btGen]: delPairingDevice
+[APP]: BT_CM_PAIRING_COMPLETE_IND status=0x00 addr=0C37-DC-E9852A 
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff11f[] record=0xb2d67518[@] addr=0C37-DC-E9852A 
+Pos Found 0x0C37:DC:E9852A [pos:1,match: 1]
+[APP]: BT_GEN_WRITE_SC_RECORD_IND record=0xb2d67518[*��] addr=0C37-DC-E9852A 
+Pos Found 0x0C37:DC:E9852A [pos:1,match: 0]
+[APP]: BT_CM_SERVICE_CON_REQ function=0x02 remAddr=0C37-DC-E9852A 
+[btCm]: BT_CM_SERVICE_CON_REQ
+[btCm]: btCmFuncConReq The BdAddress is 0x0C37-DC-E9852A, The connect function is 0002
+[btCm]: btCmGetConState The connection state is 0
+[btCm]: btCmGetConnectedFuction , 0x0C37-DC-E9852A connected_func=0 
+[APP]: BT_CM_SERVICE_CON_CFM status=0x00 
+[btCm]: btCmSetConState Set the connection state as 1
+[btCm]: btCmSetConFuction  The connection function is 0002
+[btCm]: btCmFuncConnectOut The BdAddress is 0x0C37-DC-E9852A
+[btCm]: btCmGetLeftConFuction  The left connection function is 0002
+[btCm]: btCmGetNextConFunc  i =   0000, last function is 0000 
+[btCm]: isthisFunctionCanbeSetup: The function is 0002
+[btCm]: btCmSetConState Set the connection state as 1
+[btHfp]: btPhoneFuncConReq, Connect Address = 0x0C37-DC-E9852A
+[btHfp]: isHfpHaveIdleLnk: Address = 0x0C37-DC-E9852A
+[btHfp]: btStackHfpServiceConReq: Address = 0x0C37-DC-E9852A
+[btHfp]: Link priority 2
+[APP]: BT_GEN_READ_SC_RECORD_IND ret=0xb36ff14f[] record=0xb2d66f80[@] addr=0C37-DC-E9852A 
+Pos Found 0x0C37:DC:E9852A [pos:1,match: 1]
+[btHfp]: CSR_BT_HF_SERVICE_CONNECT_CFM
+[btHfp]: btHfStackServiceConnectPrim result = 0x0000, the resultSupplier = 0x0010
+[btHfp]: btHfStackBrsfSend 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+BRSF: 359\r\n
+###################### 35106 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: btHfStackListCindSend 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIND: ("service",(0-1)),("call",(0-1)),("callsetup",(0-3)),("callheld",(0-2)),("signal",(0-5)),("roam",(0-1)),("battchg",(0-5))\r\n
+###################### 30269 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: btHfStackReadCindSend 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIND: 1,0,0,0,5,0,2\r\n
+###################### 5930 
+[btHfp]: hfpHandleCallIndication Call = 0
+[btHfp]: hfpHandleCallSetupIndication call_setup = 0
+[btHfp]: hfpHandleCallHeldIndication call_hold = 0
+[btHfp]: HFP_SERVICE_IND
+[APP]: BT_HFP_SERVICE_IND did=0x2 value=0x01 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: btHfStackCmerSend 
+[btHfp]: HFP_SIGNAL_IND
+[APP]: BT_HFP_SIGNAL_IND did=0x2 value=0x05 
+[btHfp]: HFP_ROAM_IND
+[APP]: BT_HFP_ROAM_IND did=0x2 value=0x00 
+[btHfp]: HFP_BATTCHG_IND
+[APP]: BT_HFP_BATTCHG_IND did=0x2 value=0x02 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: btHfStackChldSend 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CHLD: (0,1,2,3)\r\n
+###################### 17477 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: btHfStackClipSend 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: Link priority 2
+[btHfp]: HFP_SLC_CONNECT_IND
+[btHfp]: btPhoneConEvent, connection status is 0000
+] PP]: BT_HFP_AT_CMD_REQ len=0x0A priority=0x2 src=0xDC atCmd=0xb2d67188[AT+CSCA?
+[btHfp]: btPhoneFuncConEvent,Status = 0000, Direction = 1,  Connect Address = 0x0C37-DC-E9852A
+[btCm]: btCmFuncConResult  status = 0x0000, function =  0x0002, service =  0x0002, instance =  0002
+[APP]: BT_CM_SERVICE_CON_IND instanceId=0x2 function=0x02 status=0x00 extenParam=0x167 addr=0C37-DC-E9852A 
+[btCm]: btCmAddConnectNote  
+[btCm]: btCmGetConnectedFuction , 0x0C37-DC-E9852A connected_func=2 
+[btCm]: btCmGetConState The connection state is 1
+[btCm]: btCmUpdateLeftFuncs  The left connection function is 0002,  FFFFFFFD
+[btCm]: btCmUpdateLeftFuncs  The left connection function is 0000,  FFFFFFFD
+[btCm]: btCmFuncConnectOut The BdAddress is 0x0C37-DC-E9852A
+[btCm]: btCmGetLeftConFuction  The left connection function is 0000
+[btCm]: btCmSetConState Set the connection state as 0
+[btCm]: btCmGetConnectedFuction , 0x0C37-DC-E9852A connected_func=2 
+[APP]: BT_CM_SERVICE_CON_COMP_IND function=0x02 addr=0C37-DC-E9852A 
+[btHfp]: BT_HFP_AT_CMD_REQ 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nERROR\r\n
+###################### 51019 
+[btHfp]: HFP_COMMON_CFM_MESSAGE 
+] PP]: BT_HFP_AT_CMD_REQ len=0x0B priority=0x2 src=0xA atCmd=0xb2d67200[AT+CPBS=?
+[btHfp]: BT_HFP_AT_CMD_REQ 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CPBS: ("ME","SM","DC","RC","MC")\r\n
+###################### 28552 
+[btPbdl]: ATCMD_PB_GET_STORAGE_IND
+[btPbdl]: ATCMD_PB_GET_STORAGE_IND prority=1,atType=0,storage=331
+[btPbdl]: Device id error!!!
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: HFP_COMMON_CFM_MESSAGE 
+[btPbdl]: ATCMD_PB_AT_INTERNEL_CFM did= 1,status=0 
+[btPbdl]: pbdlAtCmdCfm Error
+[btPbdl]: ATCMD_PB_CONNECTION_IND
+[btPbdl]: ATCMD_PB_CONNECTION_IND deviceId=1
+[btPbdl]: Atcmd Create State did=1
+[btPbdl]: Create atcmd state, did =1
+[APP]: BT_PBDL_ATCMD_CONNECTION_IND did=0x1 addr=0C37-DC-E9852A 
+[btHfp]: CSR_BT_HF_AUDIO_ACCEPT_CONNECT_IND
+[btHfp]: CSR_BT_HF_AUDIO_ACCEPT_CONNECT_IND Connectionid:0002c001  LinkType: 02
+[btHfp]: btHfStackIncomingScoConPrim The Sco State = 0
+[btHfp]: HFP_AUDIO_CONNECT_IND
+[btHfp]: codec type = 1
+[btHfp]: *******hfp_audio_accepting********
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 3,2\r\n
+###################### 63431 
+[btHfp]: hfpHandleCallSetupIndication call_setup = 2
+[btHfp]: HFP_CALL_STATE_IND
+[APP]: BT_HFP_CALL_STATE_IND did=0x2 state=0x3 
+[btHfp]: CSR_BT_HF_AUDIO_CONNECT_IND
+[btHfp]: CSR_BT_HF_AUDIO_CONNECT_IND pcmSlot:01,  linkType: 02,  txInterval: 0C,  weSco:02,  rxPacketLength:003C, txPacketLength003C, airMode:02,  codecUsed:0x0001, Samplerate: 0, result: 0x0000, the resultSupplier:0x0010,scoHandle:47
+[btHfp]: btHfStackScoConIndPrim result = 0x0000, the resultSupplier = 0x0010 CodecType = 0x0001, Sample rate = 0
+[btHfp]: HFP_AUDIO_CONNECT_CFM
+[APP]: BT_HFP_SCO_IND side=0x did=0x2 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 3,3\r\n
+###################### 14230 
+[btHfp]: hfpHandleCallSetupIndication call_setup = 3
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 2,1\r\n
+###################### 14090 
+[btHfp]: hfpHandleCallIndication Call = 1
+[btHfp]: HFP_CALL_STATE_IND
+[APP]: BT_HFP_CALL_STATE_IND did=0x2 state=0x4 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 3,0\r\n
+###################### 14182 
+[btHfp]: hfpHandleCallSetupIndication call_setup = 0
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 3,2\r\n
+###################### 63431 
+[btHfp]: hfpHandleCallSetupIndication call_setup = 2
+[btHfp]: HFP_CALL_STATE_IND
+[APP]: BT_HFP_CALL_STATE_IND did=0x1 state=0x3 
+[btHfp]: CSR_BT_HF_AUDIO_ACCEPT_CONNECT_IND
+[btHfp]: CSR_BT_HF_AUDIO_ACCEPT_CONNECT_IND Connectionid:0002c000  LinkType: 02
+[btHfp]: btHfStackIncomingScoConPrim The Sco State = 0
+[btHfp]: HFP_AUDIO_CONNECT_IND
+[btHfp]: codec type = 1
+[btHfp]: *******hfp_audio_accepting********
+[btHfp]: CSR_BT_HF_AUDIO_CONNECT_IND
+[btHfp]: CSR_BT_HF_AUDIO_CONNECT_IND pcmSlot:00,  linkType: 00,  txInterval: 00,  weSco:00,  rxPacketLength:0000, txPacketLength0000, airMode:00,  codecUsed:0x0001, Samplerate: 0, result: 0x001F, the resultSupplier:0x0000,scoHandle:ffff
+[btHfp]: btHfStackScoConIndPrim result = 0x001F, the resultSupplier = 0x0000 CodecType = 0x0001, Sample rate = 0
+[btHfp]: HFP_AUDIO_CONNECT_CFM
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 3,3\r\n
+###################### 14230 
+[btHfp]: hfpHandleCallSetupIndication call_setup = 3
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 2,1\r\n
+###################### 14090 
+[btHfp]: hfpHandleCallIndication Call = 1
+[btHfp]: HFP_CALL_STATE_IND
+[APP]: BT_HFP_CALL_STATE_IND did=0x1 state=0x4 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 3,0\r\n
+###################### 14182 
+[btHfp]: hfpHandleCallSetupIndication call_setup = 0
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 2,0\r\n
+###################### 63323 
+[btHfp]: hfpHandleCallIndication Call = 0
+[btHfp]: HFP_CALL_STATE_IND
+[APP]: BT_HFP_CALL_STATE_IND did=0x1 state=0x 
+[btHfp]: CSR_BT_HF_AUDIO_DISCONNECT_IND
+[btHfp]: btHfStackScoDisconIndPrim result = 0x0013, the resultSupplier = 0x0000
+[btHfp]: HFP_AUDIO_DISCONNECT_IND
+[APP]: BT_HFP_SCO_IND side=0x1 did=0x2 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 2,0\r\n
+###################### 63323 
+[btHfp]: hfpHandleCallIndication Call = 0
+[btHfp]: HFP_CALL_STATE_IND
+[APP]: BT_HFP_CALL_STATE_IND did=0x2 state=0x 
+] size=0x05 P_DIAL_OUT_REQ priority=0x1 num=0x87aab10[10086;
+[btHfp]: BT_HFP_DIAL_OUT_REQ
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\nOK\r\n
+###################### 18811 
+[btHfp]: HFP_COMMON_CFM_MESSAGE 
+[APP]: BT_HFP_DIAL_OUT_CFM status=0x00 did=0x1 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 3,2\r\n
+###################### 63431 
+[btHfp]: hfpHandleCallSetupIndication call_setup = 2
+[btHfp]: HFP_CALL_STATE_IND
+[APP]: BT_HFP_CALL_STATE_IND did=0x1 state=0x3 
+[btHfp]: CSR_BT_HF_AUDIO_ACCEPT_CONNECT_IND
+[btHfp]: CSR_BT_HF_AUDIO_ACCEPT_CONNECT_IND Connectionid:0002c000  LinkType: 02
+[btHfp]: btHfStackIncomingScoConPrim The Sco State = 0
+[btHfp]: HFP_AUDIO_CONNECT_IND
+[btHfp]: codec type = 1
+[btHfp]: *******hfp_audio_accepting********
+[btHfp]: CSR_BT_HF_AUDIO_CONNECT_IND
+[btHfp]: CSR_BT_HF_AUDIO_CONNECT_IND pcmSlot:01,  linkType: 02,  txInterval: 0C,  weSco:02,  rxPacketLength:003C, txPacketLength003C, airMode:02,  codecUsed:0x0001, Samplerate: 0, result: 0x0000, the resultSupplier:0x0010,scoHandle:46
+[btHfp]: btHfStackScoConIndPrim result = 0x0000, the resultSupplier = 0x0010 CodecType = 0x0001, Sample rate = 0
+[btHfp]: HFP_AUDIO_CONNECT_CFM
+[APP]: BT_HFP_SCO_IND side=0x did=0x1 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 3,3\r\n
+###################### 14230 
+[btHfp]: hfpHandleCallSetupIndication call_setup = 3
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 2,1\r\n
+###################### 14090 
+[btHfp]: hfpHandleCallIndication Call = 1
+[btHfp]: HFP_CALL_STATE_IND
+[APP]: BT_HFP_CALL_STATE_IND did=0x1 state=0x4 
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 3,0\r\n
+###################### 14182 
+[btHfp]: hfpHandleCallSetupIndication call_setup = 0
+[btHfp]: CSR_BT_HF_AT_CMD_IND
+
+received: \r\n+CIEV: 2,0\r\n
+###################### 63323 
+[btHfp]: hfpHandleCallIndication Call = 0
+[btHfp]: HFP_CALL_STATE_IND
+[APP]: BT_HFP_CALL_STATE_IND did=0x1 state=0x 
+[btHfp]: CSR_BT_HF_AUDIO_DISCONNECT_IND
+[btHfp]: btHfStackScoDisconIndPrim result = 0x0013, the resultSupplier = 0x0000
+[btHfp]: HFP_AUDIO_DISCONNECT_IND
+[APP]: BT_HFP_SCO_IND side=0x1 did=0x1 
+

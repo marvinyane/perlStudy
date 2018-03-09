@@ -1,0 +1,12 @@
+[% PROCESS header 
+     title = "The Cat Sat on the Mat"
+%]
+
+[% PROCESS menu %]
+
+The location of the missing feline has now been established.
+Thank you for your assistance.
+
+[% INSERT legal/disclaimer %]
+
+[% PROCESS footer %]
